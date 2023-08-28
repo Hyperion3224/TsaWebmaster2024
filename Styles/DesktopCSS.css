@@ -1,0 +1,82 @@
+@charset "utf-8";
+body, head, html {
+  height: 100%;
+  width: 100%;
+	color: "#181A1E";
+	border: '0px';
+	padding: '0px';
+	margin: '0px';
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-right: 10%;
+  padding-left: 10%;
+  overflow: hidden;
+
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  padding-bottom: 0.2em;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 175%;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(44,104, 59, 0.5), rgba(22, 37, 24, .5), rgba(24,26, 30, 0.5), rgba(24,26, 30, 1)), url("https://media.discordapp.net/attachments/1098437465565577369/1145535162810110052/o40oe_minimalistic_simple_green_colored_windmills_on_a_hill_at__44d20060-a7a8-4183-9aa8-02b2be66f8be.png?width=810&height=810");
+
+  /* Set a specific height */
+  height: 100%;
+  border: '0px';
+  padding: '0px';
+  margin: '0px';
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 200%;
+}

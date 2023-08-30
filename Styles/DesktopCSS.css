@@ -80,3 +80,31 @@ li a {
   color: white;
   font-size: 200%;
 }
+
+/*idek man just like ignore this or smth until i figure out what im trying to do -ae*/
+.intro-div {
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  margin: 5em 0fr 0 1fr;
+  width: 100%
+}
+
+.intro-div div {
+  margin: 10px;
+  margin-top: 10%;
+  width: 1fr;
+  max-width: 30%;
+}
+
+.intro-images {
+  display: flex;
+  flex-direction: row;
+}
+
+.intro-text {
+  text-align: center;
+  color: white;
+  font-size: 200%;
+  width: 25%;
+}

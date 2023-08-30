@@ -31,6 +31,9 @@ li a {
   font-size: 175%;
 }
 
+li a:hover {
+  font-size: 225%;
+}
 
 .hover-underline-animation {
   display: inline-block;

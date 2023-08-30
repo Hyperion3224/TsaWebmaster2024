@@ -28,8 +28,30 @@ li a {
   padding-bottom: 0.2em;
   text-decoration: none;
   display: inline-block;
-  font-size: 175%;
+  font-size: 30px;
+  /*
+  background-image: url("/ImagesAndGifs/Images/transpng.png")
+  */
 }
+li a:hover{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  padding-bottom: 0.2em;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 200%;
+  
+  /*
+  background-image: url("/ImagesAndGifs/Gifs/giphy.gif");
+  background-size: 100%;
+  background-position-y: 10px; 
+  */
+}
+
+
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -44,7 +66,7 @@ li a {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: white;
+  background-color: #15570e;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -53,6 +75,10 @@ li a {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+
+
+
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
@@ -68,6 +94,8 @@ li a {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  background-attachment: fixed;
+
 }
 
 /* Place text in the middle of the image */
@@ -80,6 +108,62 @@ li a {
   color: white;
   font-size: 200%;
 }
+
+
+.CGPWelcome-text {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200%;
+  padding: 0%;
+  margin: 0%
+} 
+
+.infoBox {
+  background-color: black;
+  color: white; 
+  text-align: center;
+  flex-direction: column;
+  border-radius: 20px;
+  height: auto;
+  width:800px;
+  gap: 1vw;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin: 3vw
+}
+
+
+
+.CGPWelcome-text {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200%;
+  padding: 0%;
+  margin: 0%
+} 
+
+.infoBox {
+  background-color: black;
+  color: white; 
+  text-align: center;
+  flex-direction: column;
+  border-radius: 20px;
+  height: auto;
+  width:800px;
+  gap: 1vw;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin: 3vw
+}
+
 
 /*idek man just like ignore this or smth until i figure out what im trying to do -ae*/
 .intro-div {

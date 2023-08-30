@@ -28,28 +28,8 @@ li a {
   padding-bottom: 0.2em;
   text-decoration: none;
   display: inline-block;
-  font-size: 30px;
-  /*
-  background-image: url("/ImagesAndGifs/Images/transpng.png")
-  */
+  font-size: 175%;
 }
-li a:hover{
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  padding-bottom: 0.2em;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 200%;
-  
-  /*
-  background-image: url("/ImagesAndGifs/Gifs/giphy.gif");
-  background-size: 100%;
-  background-position-y: 10px; 
-  */
-}
-
 
 
 .hover-underline-animation {
@@ -71,19 +51,19 @@ li a:hover{
   transition: transform 0.25s ease-out;
 }
 
+.ecohub {
+  font-size: 200%;
+}
+
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+  font-size: 150%;
 }
-
-
 
 
 /* The hero image */
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(44,104, 59, 0.5), rgba(22, 37, 24, .5), rgba(24,26, 30, 0.5), rgba(24,26, 30, 1)), url("https://media.discordapp.net/attachments/1098437465565577369/1145535162810110052/o40oe_minimalistic_simple_green_colored_windmills_on_a_hill_at__44d20060-a7a8-4183-9aa8-02b2be66f8be.png?width=810&height=810");
-
   /* Set a specific height */
   height: 100%;
   border: '0px';
@@ -106,7 +86,33 @@ li a:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 200%;
+  font-size: 500%;
+}
+
+div.card {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 24%;
+  border-radius: 10px;
+  padding:10px;
+  float: left;
+}
+
+div.cardImg {
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+div.cardTxt {
+  padding: 15px;
+  text-align: center;
+  background-color: gray;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius: 10px;
+  height: 100%;
 }
 
 
@@ -137,58 +143,3 @@ li a:hover{
 }
 
 
-
-.CGPWelcome-text {
-  text-align: center;
-  color: white;
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 200%;
-  padding: 0%;
-  margin: 0%
-} 
-
-.infoBox {
-  background-color: black;
-  color: white; 
-  text-align: center;
-  flex-direction: column;
-  border-radius: 20px;
-  height: auto;
-  width:800px;
-  gap: 1vw;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  margin: 3vw
-}
-
-
-/*idek man just like ignore this or smth until i figure out what im trying to do -ae*/
-.intro-div {
-  justify-content: center;
-  justify-self: center;
-  align-self: center;
-  margin: 5em 0fr 0 1fr;
-  width: 100%
-}
-
-.intro-div div {
-  margin: 10px;
-  margin-top: 10%;
-  width: 1fr;
-  max-width: 30%;
-}
-
-.intro-images {
-  display: flex;
-  flex-direction: row;
-}
-
-.intro-text {
-  text-align: center;
-  color: white;
-  font-size: 200%;
-  width: 25%;
-}

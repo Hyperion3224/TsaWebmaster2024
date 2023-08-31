@@ -25,7 +25,7 @@ ul {
   padding-right: 10%;
   padding-left: 10%;
   overflow: hidden;
-
+  
 }
 
 li {
@@ -38,13 +38,16 @@ li a {
   text-align: center;
   padding: 14px 16px;
   padding-bottom: 0.2em;
+  margin-left: 5px;
+  margin-right: 5px;
   text-decoration: none;
   display: inline-block;
   font-size: 175%;
+
 }
 
 li a:hover {
-  font-size: 225%;
+  transform: scale(1.2);
 }
 
 .hover-underline-animation {
@@ -125,7 +128,7 @@ div.cardImg {
 div.cardTxt {
   padding: 15px;
   text-align: center;
-  background-color: #535353;
+  background-color: #04141b7c;
   border-bottom-left-radius:10px;
   border-bottom-right-radius: 10px;
   height: 100%;

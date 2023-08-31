@@ -2,11 +2,23 @@
 body, head, html {
   height: 100%;
   width: 100%;
-	background-color: #181A1E;
+	background-color: #111214;
 	border: 0px;
 	padding: 0px;
 	margin: 0px;
 }
+footer {
+  margin-top: 20px;
+  position: static;
+  bottom: 0;
+  height: auto;
+  background-color: #151518;
+}
+
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -94,8 +106,8 @@ li a:hover {
 
 div.card {
   margin: 5px;
-  border: 1px solid #111111;
-  background-color: #E4EFD1;
+  border: 1px solid #000000;
+  background-color: #181A1E;
   float: left;
   width: 24%;
   border-radius: 10px;
@@ -113,38 +125,50 @@ div.cardImg {
 div.cardTxt {
   padding: 15px;
   text-align: center;
-  background-color: #00000036;
+  background-color: #535353;
   border-bottom-left-radius:10px;
   border-bottom-right-radius: 10px;
   height: 100%;
   color: white;
+  font-size: medium;
 }
 
-
-.CGPWelcome-text {
-  text-align: center;
-  color: white;
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 200%;
-  padding: 0%;
-  margin: 0%
-} 
-
-.infoBox {
-  background-color: black;
+div.infoCard {
+  background-color: #181A1E;
   color: white; 
-  text-align: center;
+  display: flex;
   flex-direction: column;
   border-radius: 20px;
-  height: auto;
-  width:800px;
-  gap: 1vw;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  margin: 3vw
+  align-items: center;
 }
 
+div.infoCardTxt {
+  background-color: #272731;
+  color: white; 
+  width: 90%;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  text-align: center;
+}
 
+div.infoCardTxt p {
+  font-size: 16px;
+  padding: 5%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111214;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #71746e;
+  height: 2vw;
+  border-radius: 10px;
+}

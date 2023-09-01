@@ -118,28 +118,27 @@ div.card {
   border: 1px solid #000000;
   background-color: #181A1E;
   float: left;
-  width: 24%;
+  width: auto;
   border-radius: 10px;
   padding:10px;
-  float: left;
+
 }
 
 div.cardImg {
   width: auto;
-  height: 100%;
+  height: auto;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 div.cardTxt {
-  padding: 15px;
   text-align: center;
   background-color: #04141b7c;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius: 10px;
-  height: 100%;
+  border-radius: 20px;
   color: white;
   font-size: medium;
+  padding-top:5px;
+  padding-bottom: 5px;
 }
 
 div.infoCard {

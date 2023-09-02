@@ -11,8 +11,16 @@ footer {
   margin-top: 20px;
   position: static;
   bottom: 0;
-  height: auto;
+  height: 200px;
   background-color: #151518;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 clamp(10px,2vw,20px);
+  box-sizing: border-box;
 }
 
 a {
@@ -22,10 +30,8 @@ a {
 ul {
   list-style-type: none;
   margin: 0;
-  padding-right: 10%;
-  padding-left: 10%;
   overflow: hidden;
-  
+  width: 100%;
 }
 
 li {
@@ -33,7 +39,7 @@ li {
 }
 
 li a {
-  display: block;
+  margin-top: 10px;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -64,7 +70,7 @@ li a:hover {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #15570e;
+  background-color: #ffffff;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -135,6 +141,21 @@ a.startsaving{
 }
 div.hero-text a.startsaving:hover{
   font-size: 1vw;
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: relative;
+  left: 50%;
+  top: 50%; 
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+  z-index: 0;
 }
 
 div.card {
@@ -142,28 +163,27 @@ div.card {
   border: 1px solid #000000;
   background-color: #181A1E;
   float: left;
-  width: 24%;
+  width: auto;
   border-radius: 10px;
   padding:10px;
-  float: left;
+
 }
 
 div.cardImg {
   width: auto;
-  height: 100%;
+  height: auto;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 div.cardTxt {
-  padding: 15px;
   text-align: center;
   background-color: #04141b7c;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius: 10px;
-  height: 100%;
+  border-radius: 20px;
   color: white;
   font-size: medium;
+  padding-top:5px;
+  padding-bottom: 5px;
 }
 
 div.infoCard {
@@ -192,6 +212,7 @@ div.infoCardTxt p {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 0px;
 }
 /* Track */
 ::-webkit-scrollbar-track {

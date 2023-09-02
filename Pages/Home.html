@@ -4,17 +4,16 @@
 <meta charset="utf-8">
 <title>EcoHub</title>
 <link href="/Styles/DesktopCSS.css" rel="stylesheet" type="text/css">
-		
+	
 		<div class="hero-image" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('/Styles/Sources/pexels-blue-ox-studio-1857628.jpg')">
-			<div>
+			<div class="wrapper">
 				<ul>
-					<li><a href="#home" class="hover-underline-animation">Learn More</a></li>
-					<li><a href="/Pages/CleanGreenPractices.html" class="hover-underline-animation">CleanGreen</a></li>
-					<li><a href="/Pages/Hydro.html" class="hover-underline-animation">Hydro</a></li>
-					<li><a href="#contact" class="hover-underline-animation">Contact</a></li>
-					<li><a href="#contact" class="hover-underline-animation">Contact</a></li>
-					<li><a href="#contact" class="hover-underline-animation">Contact</a></li>
 					<li style="float:Left; font-size:200%;" class="hover-underline-animation"><a href="Home.html">EcoHub</a></li>
+					<li><a href="Gallery.html" class="hover-underline-animation">Learn More</a></li>
+					<li><a href="CleanGreenPractices.html" class="hover-underline-animation">Clean Practices</a></li>
+					<li><a href="Hydro.html" class="hover-underline-animation">Hydropower</a></li>
+					<li><a href="#contact" class="hover-underline-animation">Contact</a></li>
+					<li><a href="#contact" class="hover-underline-animation">Contact</a></li>
 				</ul>
 			</div>
 			
@@ -26,8 +25,24 @@
 		</div>
 </head>
 <body>
-	<div style="height:100vw;background-color:rgb(24, 26, 30);font-size:36px; justify-content: center;">
-		<div style="padding: 20vw; justify-content: center;">
+	<div class="wrapper" style="height:100vw; font-size:36px; justify-content: center;">
+		<div style="color:white">
+			<h2>
+				<strong>Introduction</strong>	
+			</h2>
+		</div>
+		<div style="
+				display: grid;
+                grid-template-columns: repeat(3,minmax(0,1fr));
+                grid-column-gap: 15px;
+                column-gap: 15px;
+                grid-row-gap: 15px;
+                row-gap: 15px;
+                width: 100;
+                height: auto;
+                margin-bottom: auto;
+				padding-top: 20px;
+				">
 			<div class="card">
 				<div class="cardImg">
 					<img src="https://www.w3schools.com/css/img_5terre.jpg">
@@ -54,6 +69,35 @@
 			</div>
 		</div>
 	</div>
+	
+	<footer>
+        <div  class="wrapper" style="flex-direction: row;">
+            <div style="width:50%; color:white; float:left; margin-bottom: 5vh;">
+                <div style="padding-left: 5vw;">
+                    <p>
+                        <strong>EcoHub</strong>
+                    </p>
+                    <p6>
+                        Copyright &copy; EcoHub 2023
+                    </p6>
+                </div>
+            </div>
+            <div style="width:50%; color:white; float:left; margin-bottom: 5vh; text-align: right;">
+                <div style="padding-right: 5vw;">
+                    <br><a style="width: fit-content; text-align: right;">
+                        <strong style="width: fit-content; text-align: right;">Quick Links: </strong>
+                    </a><br>
+                    <a href="#home" class="hover-underline-animation" style="width: fit-content">Learn More</a><br>
+                    <a href="CleanGreenPractices.html" class="hover-underline-animation" style="width: fit-content">Clean Practices</a><br>
+                    <a href="Hydro.html" class="hover-underline-animation" style="width: fit-content">Hydropower</a><br>
+                    <a href="#contact" class="hover-underline-animation" style="width: fit-content">Contact</a><br>
+                    <a href="#contact" class="hover-underline-animation" style="width: fit-content">Contact</a><br>
+                    <a href="#contact" class="hover-underline-animation" style="width: fit-content">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+<script type="text/javascript" src="/JavaScript/js.js"></script>
 </html>
 

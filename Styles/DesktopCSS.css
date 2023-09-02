@@ -113,6 +113,23 @@ li a:hover {
   font-size: 500%;
 }
 
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: relative;
+  left: 50%;
+  top: 50%; 
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+  z-index: 0;
+}
+
 div.card {
   margin: 5px;
   border: 1px solid #000000;
@@ -167,6 +184,7 @@ div.infoCardTxt p {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 0px;
 }
 /* Track */
 ::-webkit-scrollbar-track {

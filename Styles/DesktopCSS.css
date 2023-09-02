@@ -13,6 +13,7 @@ footer {
   bottom: 0;
   height: 200px;
   background-color: #151518;
+  
 }
 
 .wrapper {
@@ -113,6 +114,18 @@ li a:hover {
   font-size: 500%;
 }
 
+div.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+  border-radius: 20px;
+}
+
 #image-track {
   display: flex;
   gap: 4vmin;
@@ -184,7 +197,6 @@ div.infoCardTxt p {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
-  height: 0px;
 }
 /* Track */
 ::-webkit-scrollbar-track {

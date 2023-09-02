@@ -96,15 +96,45 @@ li a:hover {
 
 }
 
+/* url('/Styles/Sources/mapex.jpg') */
+
 /* Place text in the middle of the image */
 .hero-text {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -80%);
   color: white;
   font-size: 500%;
+}
+
+div.hero-text button.thumbtack {
+  height: 200%; width: 100%;
+  background-image: url('/Styles/Sources/ThumbTack-PNG-Free-Download.png');
+  border-color: transparent;
+  background-color: transparent;
+  background-size: cover;
+  padding: 3em;
+  position: relative; left: 14vw; top: 3vw; 
+}
+
+div.hero-text button.thumbtack
+
+
+a.startsaving{
+  font-size: .75vw;
+  background-color: #59a658;
+  color:#003010; 
+  border-radius: 15px;
+  box-shadow: 5px 5px;
+  opacity: 85%; 
+  border-color: #1d2b0a;
+  border-width: 2px;
+  padding: .5vw .7vw;
+}
+div.hero-text a.startsaving:hover{
+  font-size: 1vw;
 }
 
 div.card {
@@ -175,3 +205,4 @@ div.infoCardTxt p {
   height: 2vw;
   border-radius: 10px;
 }
+

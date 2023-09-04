@@ -154,19 +154,21 @@ button.thumbtack {
 }
 
 a.startsaving{
-  font-size: .75vw;
+  font-size: 1cm;
   background-color: #59a658;
   color:#003010; 
   border-radius: 15px;
-  box-shadow: 5px 5px;
-  opacity: 85%; 
+  box-shadow: 5px 5px 5px;
+  /*opacity: 85%;*/
   border-color: #1d2b0a;
   border-width: 2px;
-  padding: .5vw .7vw;
+  padding: .7rem 1rem;
+  transition: font-size .07s;
+
 }
 
 div.hero-text a.startsaving:hover{
-  font-size: 1vw;
+  font-size: 1.1cm;
 }
 
 #image-track {

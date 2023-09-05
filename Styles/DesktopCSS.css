@@ -109,13 +109,21 @@ li a:hover {
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 60%; 
+  top: 57.5%; 
   left: 50%;
   transform: translate(-50%, -80%);
   color: white;
   font-size: 500%;
+  transition: font-size .25s;
 }
 
+.hero-text h1 {
+  margin-bottom: 1rem;
+}
+
+.hero-text p{
+  margin-top: .3em;
+}
 @media (orientation: landscape) and  (max-width: 155em) {
   .hero-text {
     top: 67%;
@@ -132,10 +140,11 @@ li a:hover {
     top: 60%;
     left: 50%;
     transform: translate(-50%, -80%);
-    color: white;
     font-size: 500%;
   }
 }
+
+
 
 div.scroll-container {
   overflow: auto;
@@ -175,21 +184,43 @@ button.thumbtack {
 }
 
 a.startsaving{
-  font-size: 1cm;
-  background-color: #59a658;
-  color:#003010; 
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px;
+  font-size: .87cm;
+  /*background-color: #59a658;*/
+  /*background-color: #181a1e47;*/
+  color:/*#003010*//*#E4EFD1*/white; 
+  text-shadow: 0px 0px 5px #181A1E;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 4px 3px#181A1E, 0px 0px 5px 3px#181A1E;
   /*opacity: 85%;*/
-  border-color: #1d2b0a;
+  border-style: solid;
+  border-color: /*#1d2b0a*/white;
   border-width: 2px;
   padding: .7rem 1rem;
   transition: font-size .07s;
-
 }
 
+@media (orientation: portrait) {
+  a.startsaving{
+    font-size: 2cm;
+    color:/*#003010*//*#E4EFD1*/white; 
+    text-shadow: 0px 0px 10px #181A1E;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 8px 4px#181A1E, 0px 0px 10px 6px#181A1E;
+    border-width: 3px;
+    padding: 1.4rem 2rem;
+    transition: font-size .25s;
+  
+  }
+  
+  div.hero-text a.startsaving:hover{
+    font-size: 2.15cm;
+    transition: font-size .07s;
+  }
+}
+
+
 div.hero-text a.startsaving:hover{
-  font-size: 1.1cm;
+  font-size: .97cm;
 }
 
 #image-track {

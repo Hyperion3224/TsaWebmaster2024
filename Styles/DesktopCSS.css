@@ -109,11 +109,32 @@ li a:hover {
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 60%; 
   left: 50%;
   transform: translate(-50%, -80%);
   color: white;
   font-size: 500%;
+}
+
+@media (orientation: landscape) and  (max-width: 155em) {
+  .hero-text {
+    top: 67%;
+    /*transform: translate (-50%, 0);*/
+    font-size: 4vw;
+  }
+}
+
+
+@media (orientation: portrait) {
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    color: white;
+    font-size: 500%;
+  }
 }
 
 div.scroll-container {

@@ -50,7 +50,7 @@ li a {
   text-decoration: none;
   display: inline-block;
   font-size: 175%;
-
+  transition: transform .035s;
 }
 
 li a:hover {
@@ -186,11 +186,11 @@ button.thumbtack {
 a.startsaving{
   font-size: .87cm;
   /*background-color: #59a658;*/
-  /*background-color: #181a1e47;*/
+  background-color: #ffffff26;
   color:/*#003010*//*#E4EFD1*/white; 
   text-shadow: 0px 0px 5px #181A1E;
   border-radius: 10px;
-  box-shadow: inset 0px 0px 4px 3px#181A1E, 0px 0px 5px 3px#181A1E;
+  box-shadow: inset 0px 0px 4px 1px #181A1E, 0px 0px 5px 1px #181A1E;
   /*opacity: 85%;*/
   border-style: solid;
   border-color: /*#1d2b0a*/white;
@@ -204,9 +204,9 @@ a.startsaving{
     font-size: 2cm;
     color:/*#003010*//*#E4EFD1*/white; 
     text-shadow: 0px 0px 10px #181A1E;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 8px 4px#181A1E, 0px 0px 10px 6px#181A1E;
-    border-width: 3px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 8px 2px #181A1E, 0px 0px 10px 2px #181A1E;
+    border-width: 4px;
     padding: 1.4rem 2rem;
     transition: font-size .25s;
   

@@ -199,6 +199,10 @@ a.startsaving{
   transition: font-size .07s;
 }
 
+div.hero-text a.startsaving:hover{
+  font-size: .97cm;
+}
+
 @media (orientation: portrait) {
   a.startsaving{
     font-size: 2cm;
@@ -219,9 +223,7 @@ a.startsaving{
 }
 
 
-div.hero-text a.startsaving:hover{
-  font-size: .97cm;
-}
+
 
 #image-track {
   display: flex;

@@ -268,6 +268,12 @@ div.cardTxt {
   font-size: medium;
   padding-top:5px;
   padding-bottom: 5px;
+  height: calc(100% - 418px);
+}
+
+.cardTxt p {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 div.infoCard {

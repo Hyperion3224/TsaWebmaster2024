@@ -7,6 +7,13 @@ body, head, html {
 	padding: 0px;
 	margin: 0px;
 }
+/* testing */
+.testing {
+  margin-left:100px;
+}
+.testing2 {
+  margin-left:500px;
+}
 footer {
   margin-top: 20px;
   position: static;
@@ -53,17 +60,13 @@ li a {
   transition: transform .035s;
 }
 
-li a:hover {
-  transform: scale(1.2);
-}
 
-.hover-underline-animation {
+.hover-underline-animation-left {
   display: inline-block;
   position: relative;
   color: white;
 }
-
-.hover-underline-animation::after {
+.hover-underline-animation-left::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -75,16 +78,39 @@ li a:hover {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-
-.ecohub {
-  font-size: 200%;
-}
-
-.hover-underline-animation:hover::after {
+.hover-underline-animation-left:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
   font-size: 150%;
 }
+
+.hover-underline-animation-right {
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+.hover-underline-animation-right::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation-right:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  font-size: 150%;
+}
+.ecohub {
+  font-size: 200%;
+}
+
+
 
 
 /* The hero image */

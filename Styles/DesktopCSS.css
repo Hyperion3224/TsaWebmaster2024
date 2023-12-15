@@ -293,14 +293,17 @@ div.card {
 
 .from-right{
   transition: transform 400ms ease-in-out;
-  animation-delay: .5s;
   animation: fade-from-right .7s;
 }
 
 .from-left {
   transition: transform 400ms ease-in-out;
-  animation-delay: .5s;
   animation: fade-from-left .7s;
+}
+
+.from-bottom{ 
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-bottom .99s;
 }
 
 .textoutline {
@@ -380,3 +383,4 @@ div.infoCardTxt p {
 }
 @keyframes fade-from-left {from {opacity: 0; transform: translateX(-100%)} to {opacity: 1; transform: translateX(0)}}
 @keyframes fade-from-right {from {opacity: 0; transform: translateX(100%)} to {opacity: 1; transform: translateX(0)}}
+@keyframes fade-from-bottom {from {opacity: 0; transform: translateY(100%)} to {opacity: 1; transform: translateY(0)}}

@@ -31,13 +31,13 @@ var positionArray = [0, 0];
 function storePos(event, element) {
     counter++; 
     let index = counter%2;
-    positionArray[index] = event.clientY; 
+    positionArray[index] = event.clientX;; 
     if (counter % 2 == 1){
         diff = positionArray[index]-positionArray[(index+1)%2]; 
-        if (diff > 0) { //coming from down
-            x.className = "animation-up";
+                if (diff > 0) { //coming from left
+            element.className = "hover-underline-animation-left";
         } else { //coming from right
-            x.className = "animation-up";
+            element.className = "hover-underline-animation-right";
         }
     }
 }

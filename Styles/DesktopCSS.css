@@ -455,6 +455,7 @@ div.infoCardTxt p {
 
 
 .abc {
+  
   margin: 50px;
   border: 1px solid #000000;
   background-color: #181A1E;
@@ -480,6 +481,7 @@ div.infoCardTxt p {
 }
 
 .aucardTxt {
+  
   text-align: center;
   border-radius: 20px;
   color: white;
@@ -501,6 +503,7 @@ div.infoCardTxt p {
 
 .card-text-au {
   font-size: 25px;
+  padding: 15px;
   color: #c9c9c9;
 }
 

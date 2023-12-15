@@ -302,6 +302,11 @@ div.card {
   animation-delay: .5s;
   animation: fade-from-left .7s;
 }
+.from-top {
+  transition: transform 400ms ease-in-out;
+  animation-delay: .5s;
+  animation: fade-from-top .7s;
+}
 
 .textoutline {
   text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
@@ -380,3 +385,68 @@ div.infoCardTxt p {
 }
 @keyframes fade-from-left {from {opacity: 0; transform: translateX(-100%)} to {opacity: 1; transform: translateX(0)}}
 @keyframes fade-from-right {from {opacity: 0; transform: translateX(100%)} to {opacity: 1; transform: translateX(0)}}
+
+/* ABOUT US */
+
+.our-mission {
+ color:#d3d3d3;
+
+}
+
+
+.abc {
+  margin: 50px;
+  border: 1px solid #000000;
+  background-color: #181A1E;
+  border-radius: 10px;
+  padding:10px;
+  opacity:0;
+
+}
+
+ div.show {
+    transition: transform 400ms ease-in-out;
+    animation-delay: 1s;
+    animation: fade-from-right 1.5s;
+    opacity:1;
+}
+  
+
+.show2 {
+  transition: transform 400ms ease-in-out;
+  animation-delay: 1s;
+  animation: fade-from-left 1.5s;
+  opacity:1;
+}
+
+.aucardTxt {
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  font-size: medium;
+  padding-top:5px;
+  padding-bottom: 5px;
+  height: calc(100% - 418px);
+}
+
+.aucardH2{
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  font-size: 30px;
+  padding-top:5px;
+  padding-bottom: 5px;
+ 
+}
+
+.card-text-au {
+  font-size: 25px;
+  color: #c9c9c9;
+}
+
+.more{
+  margin : 100px; 
+}
+
+
+

@@ -6,6 +6,7 @@ body, head, html {
 	border: 0px;
 	padding: 0px;
 	margin: 0px;
+  overflow-x: hidden;
 }
 /* testing */
 .testing {
@@ -280,6 +281,18 @@ div.card {
   position: relative;
 }
 
+.from-right{
+  transition: transform 400ms ease-in-out;
+  animation-delay: .5s;
+  animation: fade-from-right .7s;
+}
+
+.from-left {
+  transition: transform 400ms ease-in-out;
+  animation-delay: .5s;
+  animation: fade-from-left .7s;
+}
+
 .textoutline {
   text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
              1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
@@ -355,3 +368,5 @@ div.infoCardTxt p {
   height: 2vw;
   border-radius: 10px;
 }
+@keyframes fade-from-left {from {opacity: 0; transform: translateX(-100%)} to {opacity: 1; transform: translateX(0)}}
+@keyframes fade-from-right {from {opacity: 0; transform: translateX(100%)} to {opacity: 1; transform: translateX(0)}}

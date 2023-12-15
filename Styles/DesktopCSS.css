@@ -28,16 +28,76 @@ footer {
   bottom: 0;
   height: 200px;
   background-color: #151518;
-  
+}
+
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
+}
+
+.slider {
+  height: auto;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+  width: auto;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: 100vw;
+    height: 30vh;
+	}
+	
+	.slide {
+		width: auto;
+    height: auto;
+    padding: .5em;
+    border-radius: 10px;
+	}
+}
+
+.gallery {
+  column-count: 3;
+  column-gap: 1rem;
+  display: block;
+}
+
+.gallery_image {
+  display: inline-block;
+  margin: 7.5px 0;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all .5s ease;
+  height: auto;
+  max-width: 100%;
 }
 
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  width: 100%;
-  padding: 0 clamp(10px,2vw,20px);
+  width: 100vw;
+  padding: 0 auto clamp(10px,2vw,20px);
   box-sizing: border-box;
-  color: "white";
 }
 
 a {

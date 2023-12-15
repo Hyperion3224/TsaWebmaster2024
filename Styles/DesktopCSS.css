@@ -8,6 +8,13 @@ body, head, html {
 	margin: 0px;
   overflow-x: hidden;
 }
+head {
+  font-family: 'Times New Roman', Times, serif;
+}
+body {
+  font-family: Inter,sans-serif;
+}
+
 /* testing */
 .testing {
   margin-left:100px;
@@ -30,6 +37,7 @@ footer {
   width: 100%;
   padding: 0 clamp(10px,2vw,20px);
   box-sizing: border-box;
+  color: "white";
 }
 
 a {
@@ -41,6 +49,7 @@ ul {
   margin: 0;
   overflow: hidden;
   width: 100%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 li {
@@ -142,6 +151,7 @@ li a {
   color: white;
   font-size: 500%;
   transition: font-size .25s;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .hero-text h1 {

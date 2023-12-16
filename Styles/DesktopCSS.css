@@ -457,7 +457,7 @@ div.infoCardTxt p {
 
 
 .abc {
-  
+  min-width: 900px;
   margin: 50px;
   border: 1px solid #000000;
   background-color: #181A1E;
@@ -465,9 +465,18 @@ div.infoCardTxt p {
   padding:10px;
   opacity:0;
 
+
+}
+.about-us-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(6, 15%);
+  gap: 15px;
 }
 
+
  div.show {
+    
     transition: transform 400ms ease-in-out;
     animation-delay: 1s;
     animation: fade-from-right 1.5s;
@@ -476,6 +485,7 @@ div.infoCardTxt p {
   
 
 .show2 {
+
   transition: transform 400ms ease-in-out;
   animation-delay: 1s;
   animation: fade-from-left 1.5s;
@@ -489,7 +499,7 @@ div.infoCardTxt p {
   color: white;
   font-size: medium;
   padding-top:5px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
   height: calc(100% - 418px);
 }
 
@@ -497,7 +507,7 @@ div.infoCardTxt p {
   text-align: center;
   border-radius: 20px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   padding-top:5px;
   padding-bottom: 5px;
  
@@ -505,12 +515,74 @@ div.infoCardTxt p {
 
 .card-text-au {
   font-size: 25px;
-  padding: 15px;
+  padding-left: 15px;
+  padding-right:15px;
   color: #c9c9c9;
+  padding-bottom: 5px;
 }
 
 .more{
   margin : 100px; 
+}
+
+/*--------------Financing--------------*/
+.label {
+  grid-column: 2 / 2;
+  width: 200px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 15% 85%;
+  font-size: 15px;
+  align-items: center;
+  
+}
+.label-number {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  text-align: center ;
+  grid-column: 1;
+  padding: auto;
+  width: 2em;
+  height: 2em;
+  min-height: 2em;
+  min-width: 2em;
+  border: 0.12em solid #e0e4ea;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-title{
+  text-align: center;
+  font-size: 15px;
+  border-radius: 1em;
+  border-color: rgb(34, 46, 21);
+  border-style: solid;
+  background-color: #92c4a8b7;
+  grid-column: 2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+.fgrid {
+  margin-left: 1em;
+  margin-right: 1em;  
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  display: grid;
+  row-gap: 1%;
+  column-gap: 15px;
+  grid-template-columns: 10% repeat(3, 25%) 10%; 
+  grid-template-rows: repeat(9, 10%);
+}
+
+.gen-stat-explain {
+  min-width: 50em;
+  color: white;
+  font-size: 3em;
+  grid-column: 3/4;
 }
 
 

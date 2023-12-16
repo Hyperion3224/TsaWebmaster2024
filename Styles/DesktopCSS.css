@@ -241,6 +241,17 @@ li a {
   }
 }
 
+@media (max-width: 119.9999em){
+  .big-box{
+    width: 100vw;
+  }
+}
+
+@media (min-width: 120em) {
+    .big-box {
+      max-width: 120em;
+    }
+}
 
 
 div.scroll-container {
@@ -356,14 +367,34 @@ div.card {
   animation: fade-from-right .7s;
 }
 
+.from-right-slow{
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-right 1s;
+}
+
+.from-right-slower {
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-right 1.3s;
+}
+
 .from-left {
   transition: transform 400ms ease-in-out;
   animation: fade-from-left .7s;
 }
 
+.from-left-slowed{
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-left .9s;
+}
+
 .from-bottom{ 
   transition: transform 400ms ease-in-out;
   animation: fade-from-bottom .99s;
+}
+
+.hero-text.from-bottom{
+  transition: transform 400ms ease-in;
+  animation: fade-from-bottom-hero .75s;
 }
 
 .textoutline {
@@ -403,26 +434,63 @@ div.cardTxt {
 }
 
 div.infoCard {
-  background-color: #181A1E;
+  background-color: rgba(24, 26, 30, 0.8);
   color: white; 
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   align-items: center;
+  box-shadow: inset 0 0 10px rgba(24, 26, 30, 0.8);
 }
 
 div.infoCardTxt {
-  background-color: #272731;
+  background-color: rgba(39, 39, 49, .75);
   color: white; 
   width: 90%;
   border-radius: 20px;
   margin-bottom: 5%;
   text-align: center;
+  box-shadow: 0 0 10px rgba(39, 39, 49, .75);
 }
 
 div.infoCardTxt p {
   font-size: 16px;
   padding: 5%;
+}
+
+.slide-in-image{
+  height: auto;
+  position: relative;
+}
+
+.slide-in-image img{
+  height: 36vh;
+  /*width: 24vw;*/
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 5px;
+  margin-left: -5vw
+  /*box-shadow: inset 0px 0px 50px rgba(24, 26, 30, 1);*/
+}
+
+.text-on-bg h1{
+  color: white; 
+  font-size: 4.5vh; 
+  margin: 0 0 20px 0; 
+  align-self: center;
+}
+
+.text-on-bg h2 {
+  color: rgb(190, 190, 190); 
+  align-self: left; 
+  justify-self: left; 
+  margin: 10px 0 5px 4vw;
+}
+
+.text-on-bg p {
+  color: rgb(165, 165, 165); 
+  font-size: 15px; 
+  margin: 10px 10px 30px 20px;
 }
 
 /* width */
@@ -444,6 +512,7 @@ div.infoCardTxt p {
 @keyframes fade-from-left {from {opacity: 0; transform: translateX(-100%)} to {opacity: 1; transform: translateX(0)}}
 @keyframes fade-from-right {from {opacity: 0; transform: translateX(100%)} to {opacity: 1; transform: translateX(0)}}
 @keyframes fade-from-bottom {from {opacity: 0; transform: translateY(100%)} to {opacity: 1; transform: translateY(0)}}
+@keyframes fade-from-bottom-hero {from {opacity: 0; transform: translateY(50%) translateX(-50%)} to {opacity: 1; transform: translateY(-50)}}
 /*<<<<<<< HEAD
 
 =======
@@ -452,7 +521,6 @@ div.infoCardTxt p {
 
 .our-mission {
  color:#d3d3d3;
-
 }
 
 
@@ -483,7 +551,6 @@ div.infoCardTxt p {
 }
 
 .aucardTxt {
-  
   text-align: center;
   border-radius: 20px;
   color: white;

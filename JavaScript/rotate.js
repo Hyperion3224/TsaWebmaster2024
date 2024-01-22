@@ -12,7 +12,7 @@ var box1;
 var box2;
 var box3;
 var WIDTH1;
-var BIGWIDTH;
+var BIGW;
 bug = true;
 i = 0;
 timeoutID = 0;
@@ -26,13 +26,14 @@ function setup(){
   daddy = document.getElementById("earth");
   leftBound = daddy.getBoundingClientRect().left;
   rightBound = daddy.getBoundingClientRect().right;
-  BIGWIDTH = rightBound - leftBound;
+  BIGW = Math.floor(rightBound - leftBound);
+  console.log(BIGW);
   if(bug){
-    box1.style.left = `${BIGWIDTH/2 - WIDTH1/2}px`;
+    box1.style.left = `${BIGW/2 - WIDTH1/2}px`;
     atFront = 1;
-    box2.style.left = `${5*BIGWIDTH/6 - WIDTH1/2}px`;   
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
     atFront2 = -1;
-    box3.style.left = `${BIGWIDTH/6-WIDTH1/2}px`; 
+    box3.style.left = `${BIGW/6-WIDTH1/2}px`; 
     atFront3 = -1; 
     box1.style.zIndex = 2;
     box2.style.zIndex = 1;
@@ -52,26 +53,26 @@ function pauseRevolvingDoor(element){
   i = 9999999;
   startRevolvingDoor();
   if(element.id == "firstBox"){
-    box1.style.left = `${BIGWIDTH/2 - WIDTH1/2}px`;
-    box2.style.left = `${5*BIGWIDTH/6 - WIDTH1/2}px`;   
-    box3.style.left = `${BIGWIDTH/6-WIDTH1/2}px`; 
+    box1.style.left = `${BIGW/2 - WIDTH1/2}px`;
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box3.style.left = `${BIGW/6-WIDTH1/2}px`; 
     atFront = 1;
     box1.style.zIndex = 2;
     atFront2 = atFront3 = -1;
     box2.style.zIndex = box3.style.zIndex = 1;  
   } else if(element.id == "secondBox"){  
-    box2.style.left = `${BIGWIDTH/2 - WIDTH1/2}px`; 
-    box3.style.left = `${5*BIGWIDTH/6 - WIDTH1/2}px`;   
-    box1.style.left = `${BIGWIDTH/6-WIDTH1/2}px`; 
+    box2.style.left = `${BIGW/2 - WIDTH1/2}px`; 
+    box3.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box1.style.left = `${BIGW/6-WIDTH1/2}px`; 
     atFront2 = 1;
     box2.style.zIndex = 2;
     atFront3 = atFront = -1;
     box1.style.zIndex = box3.style.zIndex = 1;
     
   } else if (element.id == "thirdBox"){
-    box3.style.left = `${BIGWIDTH/2 - WIDTH1/2}px`;
-    box2.style.left = `${5*BIGWIDTH/6 - WIDTH1/2}px`;   
-    box1.style.left = `${BIGWIDTH/6-WIDTH1/2}px`; 
+    box3.style.left = `${BIGW/2 - WIDTH1/2}px`;
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box1.style.left = `${BIGW/6-WIDTH1/2}px`; 
     atFront3 = 1;
     box3.style.zIndex = 2;
     atFront32 = atFront = -1;

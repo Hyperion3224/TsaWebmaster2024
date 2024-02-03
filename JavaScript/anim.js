@@ -42,5 +42,3 @@ function storePos(event, element) {
         }
     }
 }
-
-

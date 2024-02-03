@@ -1,64 +1,15 @@
-
-function removePX(string){
-  return Number(string.slice(0, string.length-2));
-}
-function mp(x, y){
-  return .5*(x+y);
-}
-
-function scaleCalc(boxinfo) {
-  rect = boxinfo.rectangle;
-  af = boxinfo.atFront;
-  divMP = .5*(rect.right+rect.left);
-  divWidth = rect.right-rect.left;
-  jCP =(rect.left-leftBound)/(2*(rightBound-leftBound-divWidth))+.5; 
-  theCore = .5*(leftBound+rightBound);
-  const n = 2;  // 0 - .25                  
-  if( af > 0 && divMP <= theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) + .75;}  // .75 < jCP < 1    || 0 - .25
-  else if (af > 0 && divMP > theCore) { jCP = 1.25-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // -.25 - -.5 || 1 -.75
-  else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.25 ; } // .25-.5  || .5 - .75    
-  else if (af < 0 && divMP <= theCore) { jCP = .75-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } // 0 - -.25  || .75 - .5
-  return jCP;
-
-  /* 
-from .75-1
-  if( af > 0 && divMP <= theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) + .875;}  // .875 < jCP < 1    || mp(.75, .75 + 1/n)
-  else if (af > 0 && divMP > theCore) { jCP = 1.125-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // 1 - .75
-  else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.625 ; } // .75 + mp(0, .25)
-  else if (af < 0 && divMP <= theCore) { jCP = .875-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } 
-
-*/
-
-//it takes ages to change, so i'll keep presets as comments :)
-}
-
-
-
-function update(box, boxinfo){
-  box.style.setProperty('--scale', scaleCalc(boxinfo));        
-  box.style.left = removePX(box.style.left) + velocity * boxinfo.atFront + "px";
-}
-function updateBackwards(box, boxinfo){
-  box.style.setProperty('--scale', scaleCalc(boxinfo));        
-  box.style.left = removePX(box.style.left) - velocity * boxinfo.atFront + "px";
-}
-
-function bounds(box, boxinfo){
-  rect = box.getBoundingClientRect(); 
-  if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2; }
-  if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1;}
- } 
- function boundsBackwards(box, boxinfo){
-  rect = box.getBoundingClientRect(); 
-  if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1; }
-  if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2;}
- } 
-
-
-
-
-const velocity = .75;
-
+isClicked = false;
+atFront = 1;
+atFront2 = 1;
+atFront3 = -1;
+theta = 0;
+pos = [0,0];
+time = [0,0];
+velocity = [0,0];
+counter = 0;
+daddy = 0;
+leftBound = 0;
+rightBound = 0;
 bug = true;
 i = 0;
 timeoutID = 0;
@@ -76,7 +27,7 @@ const box7info = {atFront: 1};
 const box8info = {atFront: 1};
 const box9info = {atFront: -1};
 
-//(also add corresponding id's to DesktopCSS.css )
+
 //@@@TO SCALE:: 
 function setup(){
   i = 0;
@@ -113,7 +64,6 @@ function setup(){
   rightBound = daddy.getBoundingClientRect().right;
   BIGW = Math.floor(rightBound - leftBound);
   console.log(BIGW);
-  
   if(bug){
     //@@@add line here
     box1.style.left = `${3*BIGW/6 - 1-WIDTH1/2}px`;
@@ -179,6 +129,10 @@ function pauseRevolvingDoor(element){
   setTimeout(() => { i = 1; startRevolvingDoor(); }, 5000);
 }
 
+
+
+
+
 function startRevolvingDoor() {
   timeoutID++; 
   function myLoop() { 
@@ -238,7 +192,6 @@ function startRevolvingDoor() {
   myLoop();  
 }
 
-//for text based -- prompts user to click to pause
 function hoverd(element) {
   a = document.getElementById("clickme1");
   b = document.getElementById("clickme2");

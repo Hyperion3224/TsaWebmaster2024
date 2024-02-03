@@ -255,6 +255,17 @@ li a {
   }
 }
 
+@media (max-width: 119.9999em){
+  .big-box{
+    width: 100vw;
+  }
+}
+
+@media (min-width: 120em) {
+    .big-box {
+      max-width: 120em;
+    }
+}
 
 
 div.scroll-container {
@@ -370,14 +381,36 @@ div.card {
   animation: fade-from-right .7s;
 }
 
+.from-right-slow{
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-right 1s;
+}
+
+.from-right-slower {
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-right 1.3s;
+}
+
 .from-left {
   transition: transform 400ms ease-in-out;
   animation: fade-from-left .7s;
 }
 
+.from-left-slowed{
+  transition: transform 400ms ease-in-out;
+  animation: fade-from-left .9s;
+}
+
 .from-bottom{ 
+  max-width: 475px;
+  max-height: 550px;
   transition: transform 400ms ease-in-out;
   animation: fade-from-bottom .99s;
+}
+
+.hero-text.from-bottom{
+  transition: transform 400ms ease-in;
+  animation: fade-from-bottom-hero .75s;
 }
 
 .textoutline {
@@ -416,27 +449,41 @@ div.cardTxt {
   padding-right: 15px;
 }
 
-div.infoCard {
-  background-color: #181A1E;
-  color: white; 
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  align-items: center;
+
+
+.slide-in-image{
+  height: auto;
+  position: relative;
 }
 
-div.infoCardTxt {
-  background-color: #272731;
-  color: white; 
-  width: 90%;
-  border-radius: 20px;
-  margin-bottom: 5%;
-  text-align: center;
+.slide-in-image img{
+  height: 36vh;
+  /*width: 24vw;*/
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 5px;
+  margin-left: -5vw
+  /*box-shadow: inset 0px 0px 50px rgba(24, 26, 30, 1);*/
 }
 
-div.infoCardTxt p {
-  font-size: 16px;
-  padding: 5%;
+.text-on-bg h1{
+  color: white; 
+  font-size: 4.5vh; 
+  margin: 0 0 20px 0; 
+  align-self: center;
+}
+
+.text-on-bg h2 {
+  color: rgb(190, 190, 190); 
+  align-self: left; 
+  justify-self: left; 
+  margin: 10px 0 5px 4vw;
+}
+
+.text-on-bg p {
+  color: rgb(165, 165, 165); 
+  font-size: 15px; 
+  margin: 10px 10px 30px 20px;
 }
 
 /* width */
@@ -458,6 +505,7 @@ div.infoCardTxt p {
 @keyframes fade-from-left {from {opacity: 0; transform: translateX(-100%)} to {opacity: 1; transform: translateX(0)}}
 @keyframes fade-from-right {from {opacity: 0; transform: translateX(100%)} to {opacity: 1; transform: translateX(0)}}
 @keyframes fade-from-bottom {from {opacity: 0; transform: translateY(100%)} to {opacity: 1; transform: translateY(0)}}
+@keyframes fade-from-bottom-hero {from {opacity: 0; transform: translateY(50%) translateX(-50%)} to {opacity: 1; transform: translateY(-50)}}
 /*<<<<<<< HEAD
 
 =======
@@ -466,12 +514,11 @@ div.infoCardTxt p {
 
 .our-mission {
  color:#d3d3d3;
-
 }
 
 
 .abc {
-  
+  min-width: 900px;
   margin: 50px;
   border: 1px solid #000000;
   background-color: #181A1E;
@@ -479,31 +526,40 @@ div.infoCardTxt p {
   padding:10px;
   opacity:0;
 
+
+}
+.about-us-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(6, 15%);
+  gap: 15px;
 }
 
+
  div.show {
+    
     transition: transform 400ms ease-in-out;
     animation-delay: 1s;
-    animation: fade-from-right 1.5s;
+    animation: fade-from-right 1s;
     opacity:1;
 }
   
 
 .show2 {
+
   transition: transform 400ms ease-in-out;
   animation-delay: 1s;
-  animation: fade-from-left 1.5s;
+  animation: fade-from-left 1s;
   opacity:1;
 }
 
 .aucardTxt {
-  
   text-align: center;
   border-radius: 20px;
   color: white;
   font-size: medium;
   padding-top:5px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
   height: calc(100% - 418px);
 }
 
@@ -511,7 +567,7 @@ div.infoCardTxt p {
   text-align: center;
   border-radius: 20px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   padding-top:5px;
   padding-bottom: 5px;
  
@@ -519,14 +575,180 @@ div.infoCardTxt p {
 
 .card-text-au {
   font-size: 25px;
-  padding: 15px;
+  padding-left: 15px;
+  padding-right:15px;
   color: #c9c9c9;
+  padding-bottom: 5px;
 }
 
 .more{
   margin : 100px; 
 }
 
+/*--------------Financing--------------*/
+.label {
+  grid-column: 2 / 2;
+  width: 200px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 15% 85%;
+  font-size: 15px;
+  align-items: center;
+  
+}
+.label-number {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  text-align: center ;
+  grid-column: 1;
+  padding: auto;
+  width: 2em;
+  height: 2em;
+  min-height: 2em;
+  min-width: 2em;
+  border: 0.12em solid #e0e4ea;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-title{
+  text-align: center;
+  font-size: 15px;
+  border-radius: 1em;
+  border-color: rgb(34, 46, 21);
+  border-style: solid;
+  background-color: #92c4a8b7;
+  grid-column: 2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 
-/*>>>>>>> 04818464c9fe1198ae70bdb34c4161ae830a47c3
+.fgrid {
+  margin-left: 1em;
+  margin-right: 1em;  
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  display: grid;
+  row-gap: 1%;
+  column-gap: 15px;
+  grid-template-columns: 10% repeat(3, 25%) 10%; 
+  grid-template-rows: repeat(9, 10%);
+}
+
+.gen-stat-explain {
+  min-width: 50em;
+  color: white;
+  font-size: 3em;
+  grid-column: 3/4;
+}
+
+
+
+
+/*######################################*/
+/*######################################*/
+/*### relevant to the revolving door ###*/
+/*######################################*/
+/*######################################*/
+
+#firstBox {
+  align-items: center;
+
+  left: 0px;
+  z-index: 1; 
+}
+
+#secondBox {
+  align-items: center;
+
+  left: 1300px;
+  z-index: -1; 
+}
+#thirdBox{
+  align-items: center;
+
+  left: 696px;
+  z-index:-1; 
+}
+
+#firstBox, #secondBox, #thirdBox, #b4, #b5, #b6, #b7, #b8, #b9 {
+  width: 30%;
+  height: 50%;
+  --scale:1;
+  font-size: 10px;
+  scale: calc(var(--scale));
+ 
+}
+
+.revImg{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.revImg:hover{
+  --scale:1;
+  scale: calc(var(--scale) * 1.05);
+}
+
+
+#earth {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;  */
+
+  position: absolute;
+  /* left: calc((100vw - 85vw)/2); */
+  height: 100%;
+  width: 100%;
+  margin: auto; 
+}
+
+div.infoCard {
+  font-size: 330%;
+  background-color: rgba(24, 26, 30, 0.8);
+  color: white; 
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  min-height: 200px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(24, 26, 30, 0.8);
+}
+
+div.infoCardTxt {
+  align-items: center;
+  width: 90%;
+  height: 90% !important;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(39, 39, 49, .75);
+}
+
+div.infoCardTxt p {
+  vertical-align: middle;
+  font-size: math;
+  color:#d1d1d1;
+  transition: all ease;
+  padding: auto;
+  padding-top: 1vh;
+  margin:auto;
+  width: 90%;
+  height: 100%;
+}
+#clickme1, #clickme2, #clickme3 {
+  display: none;
+}
+#clickme1h, #clickme2h, #clickme3h {
+  display:inherit;
+
+  opacity: 50%;
+  font-size: small;
+  white-space: no-line-break;
+}

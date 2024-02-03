@@ -4,6 +4,7 @@
 <head>
 <script type="text/javascript" src="../Styles/DesktopCSS.css"></script>
 <script type="text/javascript" src="../JavaScript/anim.js"></script>
+<script type="text/javascript" src="/TsaWebmaster2024/JavaScript/rotate.js"></script>
 
 <meta charset="utf-8">
 <title>EcoHub</title>
@@ -11,122 +12,145 @@
 			
             
 
-              
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--          THIS PAGE'S TEXT GOT MESSED UP BECAUSE REVOLVING DOOR          -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------- -->
+<!--                    CHANGE THE DIVS AND CSS FOR THIS                     -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------- -->
+<!--                PLEASE DON'T MESS WITH REVOLVING DOOR!!!!                -->
+<!-- ----------------------------------------------------------------------- -->
+
 </head>
-<body>
+<body onload="setup()">
     <div class="wrapper">
-      <ul>
-        <li style="float:Left; font-size:200%;"><a href="index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
-        <li><a href="Sources.html" class="hover-underline-animation-left"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
-        <li><a href="AboutUs.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
-        <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
-        <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
-        <li><a href="Cost&Financing.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Financing</a></li>
-      </ul>
-    </div>       
-    
+        <ul>
+          <li style="float:Left; font-size:200%;"><a href="index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
+          <li><a href="Sources.html" class="hover-underline-animation-left"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
+          <li><a href="AboutUs.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
+          <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
+          <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
+          <li><a href="Cost&Financing.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Financing</a></li>
+        </ul>
+      </div>       
       
-    
-    <div class="wrapper" style="height: auto; font-size:36px;">
         
-      <h1 style=" color: white;" class = "from-left">
-          The Little Things
-      </h1>
-      <h4 style=" color: white;" class = "from-left">
-          <i>Every Action Matters</i>
-      </h4>
-
-      <div style="
-              display: grid;
-              grid-template-columns: repeat(3,minmax(0,1fr));
-              grid-column-gap: 15px;
-              column-gap: 15px;
-              grid-row-gap: 15px;
-              row-gap: 15px;
-              width: 100;
-              height: auto;
-              margin-bottom: auto;
-          ">
-                  <div class="infoCard from-bottom">
-                    <img style="padding-top: 1em;"src="../Styles/Sources/Icons/icons8-recycle-100.png">      
-                    <p>Recycle</p>
-                      <div class="infoCardTxt">
-                          <p>Home recycling is an effective way to cut waste and environmental impact. Steps include knowing local guidelines, separating recyclables, cleaning containers, buying recycled products, and educating others. Benefits include resource conservation, energy savings, less landfill waste, lower emissions, and job creation. </p>
-                      </div>
-                  </div>
-
-                  <div class="infoCard from-bottom">
-                    <img style="padding-top: 1em;"src="../Styles/Sources/Icons/icons8-plate-100.png">      
-                    <p>Eat Less Meat</p>
-                      <div class="infoCardTxt">
-                          <p>
-                            Reducing meat intake benefits the environment. Tips include exploring plant-based proteins, trying meat substitutes, adjusting recipes, gradually cutting meat consumption, and practicing mindful eating. Environmental gains include lower greenhouse gas emissions, efficient land use, water conservation, reduced deforestation, less pollution, energy savings, and biodiversity preservation.</p>
-                      </div>
-                  </div>
-
-                  <div class="infoCard from-bottom">
-                    <img style="padding-top: 1em;"src="../Styles/Sources/Icons/icons8-compost-100.png">      
-                    <p>Compost</p>
-                      <div class="infoCardTxt">
-                          <p>
-                            Composting is a rewarding and simple process. Numerous online guides and tips are readily available. It is an environmentally friendly waste management practice with benefits such as reduced landfill waste, erosion control, less need for chemical fertilizers and pesticides, water conservation, and a lower carbon footprint.</p>
-                      </div>
-                  </div>
-
-                  <div class="infoCard from-bottom">
-                    <img style="padding-top: 1em;"src="../Styles/Sources/Icons/icons8-fan-100.png">      
-                    <p>AS Heat Pumps</p>
-                      <div class="infoCardTxt">
-                          <p>
-                            Air source heat pumps (ASHPs) are versatile renewable energy systems for heating and cooling. To optimize their use, understand their operation, assess your property, consider efficiency and costs, choose a suitable ASHP, and ensure proper installation and maintenance. ASHPs contribute to environmental benefits by reducing carbon emissions, enhancing energy efficiency, lowering environmental impact, and improving energy security.</p>
-                      </div>
-                  </div>
-
-                  <div class="infoCard from-bottom">
-                    <img style="padding-top: 1em;"src="../Styles/Sources/Icons/icons8-insulating-tape-96.png">      
-                    <p>Insulation</p>
-                      <div class="infoCardTxt">
-                          <p>
-                            Enhancing home insulation and energy efficiency benefits both comfort and the environment. Assess your home, select appropriate insulation, and install it professionally or DIY. This improves energy efficiency, reduces carbon footprint, conserves resources, addresses climate change, enhances indoor air quality, and promotes long-term sustainability.</p>
-                      </div>
-                  </div>
-
-                  <div class="infoCard from-bottom">
-                    <img style="padding-top: 1em;"src="../Styles/Sources/Icons/icons8-donate-100.png">
-                    <p>Donate (vs. Trash)</p>
-                      <div class="infoCardTxt">
-                          <p>
-                            Donating old belongings, instead of discarding them, promotes environmental sustainability. Steps to donate more include researching local donation centers, exploring specialty programs, using online platforms, and more. Increased donations reduce landfill waste, conserve resources, promote reuse and circularity, save energy, cut emissions, support local communities, and encourage responsible consumption.</p>
-                      </div>
-                  </div>
-        </div>
-</div>
-<div class="hero-image" style="margin-top: 5em; background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('../Styles/Sources/pexels-singkham-1108572.jpg')">
-    <div class="hero-cover-left">
-        <div style="padding: 5em;">
-            <h1>
-                What else?
-            </h1><br><br>
-            <h3>Reduce energy use: Unplug, turn off, and conserve power daily.</h3><br><br>
-            <h3>Conserve water: Fix leaks, use wisely, and adopt water-saving habits.</h3><br><br>
-            <h3>Plant trees: Foster biodiversity and absorb carbon dioxide naturally.</h3><br><br>
-            <h3>Green transportation: Walk, bike, or carpool for eco-friendly commuting.</h3><br><br>
-            <h3>Minimize waste: Embrace zero-waste practices and choose reusable options.</h3><br><br>
-            <h3>Eco-friendly products: Choose sustainable, recyclable, and low-impact items.</h3><br><br>
-            <h3>Educate and share: Spread awareness about sustainable living practices daily.</h3><br><br>
-        </div>
+      
+      <div class="wrapper" style="height: auto; font-size:36px;">
+          
+        <h1 style=" color: white;" class = "from-left">
+            The Little Things
+        </h1>
+        <h4 style=" color: white;" class = "from-left">
+            <i>Every Action Matters</i>
+        </h4>
+        <div style="height:1000px">
+        <div id="earth" style="padding-bottom: .1vw; margin-bottom: auto;">
+   
+            <div onmousedown="pauseRevolvingDoor(this)" onmouseenter="hoverd(this)" onmouseleave="dehoverd(this)" id="firstBox" style="position:absolute;">
+              <div class="infoCard">
+                
+                <p style="color:#CD32C5; margin-bottom: 15px; font-size: math;">Recycle</p>
+                <p id="clickme1">click to pause revolving door!</p>
+                <div class="infoCardTxt">
+                    <p>Home recycling is an effective way to cut waste and environmental impact. Steps include knowing local guidelines, separating recyclables, cleaning containers, buying recycled products, and educating others. Benefits include resource conservation, energy savings, less landfill waste, lower emissions, and job creation. </p>
+                </div>
+              </div>  
+            </div>
+            <div onmousedown="pauseRevolvingDoor(this)" onmouseenter="hoverd(this)" onmouseleave="dehoverd(this)" id="secondBox" style="position:absolute;">
+              <div class="infoCard">
+                <p style="color:#C5CD32; margin-bottom: 15px; font-size: math;">Reducing</p>
+                <p id="clickme2">click to pause revolving door!</p>
+                <div class="infoCardTxt">
+                    <p>Reducing meat intake benefits the environment. Tips include exploring plant-based proteins, trying meat substitutes, adjusting recipes, gradually cutting meat consumption, and practicing mindful eating. Environmental gains include lower greenhouse gas emissions, efficient land use, water conservation, reduced deforestation, less pollution, energy savings, and biodiversity preservation.</p>
+                </div>
+              </div>  </div>
+            <div onmousedown="pauseRevolvingDoor(this)" onmouseenter="hoverd(this)" onmouseleave="dehoverd(this)" id="thirdBox" style="position:absolute;">
+              <div class="infoCard">
+                <p style="color:#32C5CD; margin-bottom: 15px; font-size: math;">Composting</p>
+                <p id="clickme3">click to pause revolving door!</p>
+                <div class="infoCardTxt">
+                    <p>Compost is a rewarding and simple process. Numerous online guides and tips are readily available. It is an environmentally friendly waste management practice with benefits such as reduced landfill waste, erosion control, less need for chemical fertilizers and pesticides, water conservation, and a lower carbon footprint. </p>
+                </div>
+              </div>  
+            </div>
+        
+         </div>
+         </div>
+  
+        <!-- <div style="
+                display: grid;
+                grid-template-columns: repeat(3,minmax(0,1fr));
+                grid-column-gap: 15px;
+                column-gap: 15px;
+                grid-row-gap: 15px;
+                row-gap: 15px;
+                width: 100;
+                height: calc (auto+ 10%);
+                padding-bottom: .1vw;
+                margin-bottom: auto;
+            ">
+                    <div class="infoCard from-bottom">
+                            <p>Recycle</p>
+                            <img src="">
+                        <div class="infoCardTxt">
+                            <p>Home recycling is an effective way to cut waste and environmental impact. Steps include knowing local guidelines, separating recyclables, cleaning containers, buying recycled products, and educating others. Benefits include resource conservation, energy savings, less landfill waste, lower emissions, and job creation. </p>
+                        </div>
+                    </div>
+  
+                    <div class="infoCard from-bottom">
+                            <p>Eat Less Meat</p>
+                            <img src="">
+                        <div class="infoCardTxt">
+                            <p>
+                              Reducing meat intake benefits the environment. Tips include exploring plant-based proteins, trying meat substitutes, adjusting recipes, gradually cutting meat consumption, and practicing mindful eating. Environmental gains include lower greenhouse gas emissions, efficient land use, water conservation, reduced deforestation, less pollution, energy savings, and biodiversity preservation.</p>
+                        </div>
+                    </div>
+  
+                    <div class="infoCard from-bottom">
+                            <p>Compost</p>
+                            <img src="">
+                        <div class="infoCardTxt">
+                            <p>
+                              Composting is a rewarding and simple process. Numerous online guides and tips are readily available. It is an environmentally friendly waste management practice with benefits such as reduced landfill waste, erosion control, less need for chemical fertilizers and pesticides, water conservation, and a lower carbon footprint.</p>
+                        </div>
+                    </div>
+  
+                    <div class="infoCard from-bottom">
+                            <p>AS Heat Pumps</p>
+                            <img src="">
+                        <div class="infoCardTxt">
+                            <p>
+                              Air source heat pumps (ASHPs) are versatile renewable energy systems for heating and cooling. To optimize their use, understand their operation, assess your property, consider efficiency and costs, choose a suitable ASHP, and ensure proper installation and maintenance. ASHPs contribute to environmental benefits by reducing carbon emissions, enhancing energy efficiency, lowering environmental impact, and improving energy security.</p>
+                        </div>
+                    </div>
+  
+                    <div class="infoCard from-bottom">
+                            <p>Insulation</p>
+                            <img src="">
+                        <div class="infoCardTxt">
+                            <p>
+                              Enhancing home insulation and energy efficiency benefits both comfort and the environment. Assess your home, select appropriate insulation, and install it professionally or DIY. This improves energy efficiency, reduces carbon footprint, conserves resources, addresses climate change, enhances indoor air quality, and promotes long-term sustainability.</p>
+                        </div>
+                    </div>
+  
+                    <div class="infoCard from-bottom">
+                            <p>Donate (vs. Trash)</p>
+                            <img src="">
+                        <div class="infoCardTxt">
+                            <p>
+                              Donating old belongings, instead of discarding them, promotes environmental sustainability. Steps to donate more include researching local donation centers, exploring specialty programs, using online platforms, and more. Increased donations reduce landfill waste, conserve resources, promote reuse and circularity, save energy, cut emissions, support local communities, and encourage responsible consumption.</p>
+                        </div>
+                    </div>
+  
+        </div>  -->
     </div>
-</div>
-<div class="wrapper" style="color:white">
-    <div style="padding: 10em;">
-        <strong style="font-size: 3em;"> Let's Dive In!</strong>
-    </div>
-</div>
-<div class="hero-image" style="margin-top: 5em; background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('../Styles/Sources/greenplant-noah-buscher.avif')">
-    <div class="hero-cover-right">
-
-    </div>
-</div>
+<!--<div class="hero-image" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('/Styles/Sources/pexels-singkham-1108572.jpg')">
+ 
+</div>-->
 
     <footer>
         <div  class="wrapper" style="flex-direction: row;">

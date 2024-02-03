@@ -536,14 +536,14 @@ div.cardTxt {
 }
 
 
- div.show {
-    
-    transition: transform 400ms ease-in-out;
-    animation-delay: 1s;
-    animation: fade-from-right 1s;
-    opacity:1;
-}
+div.show {
   
+  transition: transform 400ms ease-in-out;
+  animation-delay: 1s;
+  animation: fade-from-right 1s;
+  opacity:1;
+}
+
 
 .show2 {
 
@@ -654,25 +654,7 @@ div.cardTxt {
 /*######################################*/
 /*######################################*/
 
-#firstBox {
-  align-items: center;
 
-  left: 0px;
-  z-index: 1; 
-}
-
-#secondBox {
-  align-items: center;
-
-  left: 1300px;
-  z-index: -1; 
-}
-#thirdBox{
-  align-items: center;
-
-  left: 696px;
-  z-index:-1; 
-}
 
 #firstBox, #secondBox, #thirdBox, #b4, #b5, #b6, #b7, #b8, #b9 {
   width: 30%;

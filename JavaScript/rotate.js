@@ -13,13 +13,26 @@ function scaleCalc(boxinfo) {
   divWidth = rect.right-rect.left;
   jCP =(rect.left-leftBound)/(2*(rightBound-leftBound-divWidth))+.5; 
   theCore = .5*(leftBound+rightBound);
-  const n = 4;  // 0 - .25                  
+  const n = 2;  // 0 - .25                  
+  if( af > 0 && divMP <= theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) + .75;}  // .75 < jCP < 1    || 0 - .25
+  else if (af > 0 && divMP > theCore) { jCP = 1.25-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // -.25 - -.5 || 1 -.75
+  else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.25 ; } // .25-.5  || .5 - .75    
+  else if (af < 0 && divMP <= theCore) { jCP = .75-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } // 0 - -.25  || .75 - .5
+  return jCP;
+
+  /* 
+from .75-1
   if( af > 0 && divMP <= theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) + .875;}  // .875 < jCP < 1    || mp(.75, .75 + 1/n)
   else if (af > 0 && divMP > theCore) { jCP = 1.125-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // 1 - .75
   else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.625 ; } // .75 + mp(0, .25)
   else if (af < 0 && divMP <= theCore) { jCP = .875-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } 
-  return jCP;
+
+*/
+
+//it takes ages to change, so i'll keep presets as comments :)
 }
+
+
 
 function update(box, boxinfo){
   box.style.setProperty('--scale', scaleCalc(boxinfo));        
@@ -63,7 +76,7 @@ const box7info = {atFront: 1};
 const box8info = {atFront: 1};
 const box9info = {atFront: -1};
 
-
+//(also add corresponding id's to DesktopCSS.css )
 //@@@TO SCALE:: 
 function setup(){
   i = 0;
@@ -100,6 +113,7 @@ function setup(){
   rightBound = daddy.getBoundingClientRect().right;
   BIGW = Math.floor(rightBound - leftBound);
   console.log(BIGW);
+  
   if(bug){
     //@@@add line here
     box1.style.left = `${3*BIGW/6 - 1-WIDTH1/2}px`;
@@ -165,10 +179,6 @@ function pauseRevolvingDoor(element){
   setTimeout(() => { i = 1; startRevolvingDoor(); }, 5000);
 }
 
-
-
-
-
 function startRevolvingDoor() {
   timeoutID++; 
   function myLoop() { 
@@ -228,6 +238,7 @@ function startRevolvingDoor() {
   myLoop();  
 }
 
+//for text based -- prompts user to click to pause
 function hoverd(element) {
   a = document.getElementById("clickme1");
   b = document.getElementById("clickme2");

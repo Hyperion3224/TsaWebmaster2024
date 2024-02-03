@@ -48,7 +48,7 @@ function bounds(box, boxinfo){
   if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2; }
   if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1;}
 }
- 
+
  function boundsBackwards(box, boxinfo){
   rect = box.getBoundingClientRect(); 
   if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1; }
@@ -144,6 +144,8 @@ function setup(){
 }
 
 //text revolving door only
+
+/*
 function pauseRevolvingDoor(element){
   i = 9999999;
   startRevolvingDoor();
@@ -176,7 +178,7 @@ function pauseRevolvingDoor(element){
   i = 10000000;
   setTimeout(() => { i = 1; startRevolvingDoor(); }, 5000);
 }
-
+*/
 function startRevolvingDoor() {
   timeoutID++; 
   function myLoop() { 

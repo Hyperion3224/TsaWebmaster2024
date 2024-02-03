@@ -1,4 +1,3 @@
-
 function removePX(string){
   return Number(string.slice(0, string.length-2));
 }
@@ -6,132 +5,50 @@ function mp(x, y){
   return .5*(x+y);
 }
 
-function scaleCalc(boxinfo) {
-  rect = boxinfo.rectangle;
-  af = boxinfo.atFront;
-  divMP = .5*(rect.right+rect.left);
-  divWidth = rect.right-rect.left;
-  jCP =(rect.left-leftBound)/(2*(rightBound-leftBound-divWidth))+.5; 
-  theCore = .5*(leftBound+rightBound);
-  const n = 4;  // 0 - .25                  
-  if( af > 0 && divMP <= theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) + .875;}  // .875 < jCP < 1    || mp(.75, .75 + 1/n)
-  else if (af > 0 && divMP > theCore) { jCP = 1.125-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // 1 - .75
-  else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.625 ; } // .75 + mp(0, .25)
-  else if (af < 0 && divMP <= theCore) { jCP = .875-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } 
-  return jCP;
-}
-
-function update(box, boxinfo){
-  box.style.setProperty('--scale', scaleCalc(boxinfo));        
-  box.style.left = removePX(box.style.left) + velocity * boxinfo.atFront + "px";
-}
-function updateBackwards(box, boxinfo){
-  box.style.setProperty('--scale', scaleCalc(boxinfo));        
-  box.style.left = removePX(box.style.left) - velocity * boxinfo.atFront + "px";
-}
-
-function bounds(box, boxinfo){
-  rect = box.getBoundingClientRect(); 
-  if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2; }
-  if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1;}
- } 
- function boundsBackwards(box, boxinfo){
-  rect = box.getBoundingClientRect(); 
-  if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1; }
-  if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2;}
- } 
-
-
-
-
-const velocity = .75;
-
+atFront = atFront2 = 1;
+atFront3 = -1; 
+const velocity = 1;
+var box1;
+var box2;
+var box3;
+var WIDTH1;
+var BIGW;
 bug = true;
 i = 0;
 timeoutID = 0;
 
-//@@@add line here
-const box1info = {atFront: 1};
-const box2info = {atFront: 1};
-const box3info = {atFront: -1};
-
-const box4info = {atFront: -1};
-const box5info = {atFront: -1};
-const box6info = {atFront: 1};
-
-const box7info = {atFront: 1};
-const box8info = {atFront: 1};
-const box9info = {atFront: -1};
-
-
-//@@@TO SCALE:: 
 function setup(){
   i = 0;
-
-  //@@@add line here
   box1 = document.getElementById("firstBox");
   box2 = document.getElementById("secondBox");
   box3 = document.getElementById("thirdBox");
-
-  box4 = document.getElementById("b4");
-  box5 = document.getElementById("b5");
-  box6 = document.getElementById("b6");
-
-  box7 = document.getElementById("b7");
-  box8 = document.getElementById("b8");
-  box9 = document.getElementById("b9");
-
-  //@@@add line here
-  box1info.rectangle = box1.getBoundingClientRect();
-  box2info.rectangle = box2.getBoundingClientRect();
-  box3info.rectangle = box3.getBoundingClientRect();
-
-  box4info.rectangle = box4.getBoundingClientRect();
-  box5info.rectangle = box5.getBoundingClientRect();
-  box6info.rectangle = box6.getBoundingClientRect();
-
-  box7info.rectangle = box7.getBoundingClientRect();
-  box8info.rectangle = box8.getBoundingClientRect();
-  box9info.rectangle = box9.getBoundingClientRect();
-
-  const WIDTH1 = box1info.rectangle.right-box1info.rectangle.left;
+  WIDTH1 = box1.getBoundingClientRect().right-box1.getBoundingClientRect().left;
   daddy = document.getElementById("earth");
   leftBound = daddy.getBoundingClientRect().left;
   rightBound = daddy.getBoundingClientRect().right;
   BIGW = Math.floor(rightBound - leftBound);
   console.log(BIGW);
   if(bug){
-    //@@@add line here
-    box1.style.left = `${3*BIGW/6 - 1-WIDTH1/2}px`;
-    box2.style.left = `${5*BIGW/6 -5- WIDTH1/2}px`;   
+    box1.style.left = `${BIGW/2 - WIDTH1/2}px`;
+    atFront = 1;
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    atFront2 = -1;
     box3.style.left = `${BIGW/6-WIDTH1/2}px`; 
-
-    box4.style.left = `${3*BIGW/6 +1- WIDTH1/2}px`;
-    box5.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
-    box6.style.left = `${BIGW/6-2-WIDTH1/2}px`; 
-
-    box7.style.left = `${3*BIGW/6 +3- WIDTH1/2}px`;
-    box8.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
-    box9.style.left = `${BIGW/6-1-WIDTH1/2}px`; 
-    //@@@add line here
+    atFront3 = -1; 
     box1.style.zIndex = 2;
     box2.style.zIndex = 1;
     box3.style.zIndex = 1;   
-
-    box4.style.zIndex = 1;
-    box5.style.zIndex = 2;
-    box6.style.zIndex = 2;   
-
-    box7.style.zIndex = 2;
-    box8.style.zIndex = 1;
-    box9.style.zIndex = 1;  
   }
   bug = false;
+
 
   startRevolvingDoor();
 }
 
-//text revolving door only
+function stopRevolvingDoor(){
+  i = -1;
+}
+
 function pauseRevolvingDoor(element){
   i = 9999999;
   startRevolvingDoor();
@@ -165,56 +82,52 @@ function pauseRevolvingDoor(element){
   setTimeout(() => { i = 1; startRevolvingDoor(); }, 5000);
 }
 
-
-
-
-
 function startRevolvingDoor() {
   timeoutID++; 
-  function myLoop() { 
-
+  function myLoop() {         //  create a loop function
     timeoutID = setTimeout(function() {
 
       i++;
-       //@@@add line here
-      box1info.rectangle = box1.getBoundingClientRect();
-      box2info.rectangle = box2.getBoundingClientRect();
-      box3info.rectangle = box3.getBoundingClientRect();
 
-      box4info.rectangle = box4.getBoundingClientRect();
-      box5info.rectangle = box5.getBoundingClientRect();
-      box6info.rectangle = box6.getBoundingClientRect();
+      rect = box1.getBoundingClientRect();
+      srect = box2.getBoundingClientRect();      
+      trect = box3.getBoundingClientRect();
 
-      box7info.rectangle = box7.getBoundingClientRect();
-      box8info.rectangle = box8.getBoundingClientRect();
-      box9info.rectangle = box9.getBoundingClientRect();
+      //working bounce
+      onCooldown = false;
+      if ((rect.left < leftBound && !onCooldown)) { onCooldown = true; atFront = -atFront; box1.style.zIndex = 2; }
+      if ((srect.left < leftBound && !onCooldown)) { onCooldown = true; atFront2 = -atFront2; box2.style.zIndex = 2;}
+      if ((trect.left < leftBound && !onCooldown)) { onCooldown = true; atFront3 = -atFront3; box3.style.zIndex = 2;}
+      if ((rect.right > rightBound && !onCooldown)) { onCooldown = true; atFront = -atFront; box1.style.zIndex = 1; }
+      if ((srect.right > rightBound && !onCooldown)) { onCooldown = true; atFront2 = -atFront2; box2.style.zIndex = 1;}
+      if ((trect.right > rightBound && !onCooldown)) { onCooldown = true; atFront3 = -atFront3; box3.style.zIndex = 1;}
 
-       //@@@add line here
-      bounds(box1, box1info);
-      bounds(box2, box2info);
-      bounds(box3, box3info);
-
-      boundsBackwards(box4, box4info);
-      boundsBackwards(box5, box5info);
-      boundsBackwards(box6, box6info);
-
-      bounds(box7, box7info);
-      bounds(box8, box8info);
-      bounds(box9, box9info);
+      //calculate change in position
+      dx1 = velocity * atFront; //small change 
+      dx2 = velocity * atFront2;
+      dx3 = velocity * atFront3;
       
-      //@@@add line here
-      update(box1, box1info);
-      update(box2, box2info);
-      update(box3, box3info);
+      function scaleCalc(rect, af) {
+        divMP = .5*(rect.right+rect.left);
+        divWidth = rect.right-rect.left;
+        jCP =(rect.left-leftBound)/(2*(rightBound-leftBound-divWidth))+.5; 
+        theCore = .5*(leftBound+rightBound);
+        const n = 4;                    
+        if( af > 0 && divMP < theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.875;}  // .875 < jCP < 1    || mp(.75, .75 + 1/n)
+        else if (af > 0 && divMP > theCore) { jCP = 1.125-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // 1/n + mp(.75, .75 + 1/n)    - jCP
+        else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.625 ; } // .75 + mp(0, .25)
+        else if (af < 0 && divMP < theCore) { jCP = .875-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } // mp
+        return jCP;
+      }
 
-      updateBackwards(box4, box4info);
-      updateBackwards(box5, box5info);
-      updateBackwards(box6, box6info);
-
-      update(box7, box7info);
-      update(box8, box8info);
-      update(box9, box9info);
-
+      function update(box, dx, rect, atFront){
+        base = removePX(box.style.left);
+        box.style.setProperty('--scale', scaleCalc(rect, atFront));        
+        box.style.left = Math.floor(base + dx) + "px";
+      }
+      update(box1, dx1, rect, atFront);
+      update(box2, dx2, srect, atFront2);
+      update(box3, dx3, trect, atFront3);
  
       if (i < 10000000 && i > 0) {
         myLoop();  

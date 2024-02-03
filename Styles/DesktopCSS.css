@@ -199,20 +199,6 @@ li a {
 
 }
 
-.hero-cover-right {
-  width: 30vw; 
-  height: 100vh; 
-  background-color: #111214; 
-  margin-left: auto; 
-  color: white;
-}
-
-.hero-cover-left {
-  width: 30vw; 
-  height: 100vh; 
-  background-color: #111214; 
-  color: white;
-}
 /* url('/Styles/Sources/mapex.jpg') */
 
 /* Place text in the middle of the image */
@@ -540,7 +526,7 @@ div.cardTxt {
     
     transition: transform 400ms ease-in-out;
     animation-delay: 1s;
-    animation: fade-from-right 1s;
+    animation: fade-from-right 1.5s;
     opacity:1;
 }
   
@@ -549,7 +535,7 @@ div.cardTxt {
 
   transition: transform 400ms ease-in-out;
   animation-delay: 1s;
-  animation: fade-from-left 1s;
+  animation: fade-from-left 1.5s;
   opacity:1;
 }
 
@@ -674,75 +660,62 @@ div.cardTxt {
   z-index:-1; 
 }
 
-#firstBox, #secondBox, #thirdBox, #b4, #b5, #b6, #b7, #b8, #b9 {
+#firstBox, #secondBox, #thirdBox {
   width: 30%;
-  height: 50%;
+  height: 90%;
   --scale:1;
   font-size: 10px;
   scale: calc(var(--scale));
- 
 }
 
-.revImg{
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.revImg:hover{
+#firstBox:hover, #secondBox:hover, #thirdBox:hover {
   --scale:1;
-  scale: calc(var(--scale) * 1.05);
+  scale: calc(var(--scale) * 1.05) !important;
 }
-
-
 #earth {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;  */
-
+  /* background-color: white; */
   position: absolute;
-  /* left: calc((100vw - 85vw)/2); */
-  height: 100%;
-  width: 100%;
+  left: calc((100vw - 85vw)/2);
+  height: 1000px;
+  width: 85%;
   margin: auto; 
 }
 
 div.infoCard {
+  font-size: 330%;
+  background-color: rgba(24, 26, 30, 0.8);
+  color: white; 
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  min-height: 200px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(24, 26, 30, 0.8);
+}
 
-    background-color: rgba(24, 26, 30, 0.8);
+div.infoCardTxt {
+  align-items: center;
+  width: 90%;
+  height: 90% !important;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(39, 39, 49, .75);
+}
 
-  
-    color: white; 
-  
-    display: flex;
-  
-    flex-direction: column;
-    border-radius: 20px;
-  
-    align-items: center;
-  
-    box-shadow: inset 0 0 10px rgba(24, 26, 30, 0.8);
-  
-  }
-  
-  div.infoCardTxt {
-  
-    background-color: rgba(39, 39, 49, .75);
-  
-    color: white; 
-    width: 90%;
-    border-radius: 20px;
-    margin-bottom: 5%;
-    text-align: center;
-  
-    box-shadow: 0 0 10px rgba(39, 39, 49, .75);
-  
-  }
-  
 div.infoCardTxt p {
-    font-size: 16px;
-    padding: 5%;
-  }
+  vertical-align: middle;
+  font-size: math;
+  color:#d1d1d1;
+  transition: all ease;
+  padding: auto;
+  padding-top: 1vh;
+  margin:auto;
+  width: 90%;
+  height: 100%;
+}
 #clickme1, #clickme2, #clickme3 {
   display: none;
 }

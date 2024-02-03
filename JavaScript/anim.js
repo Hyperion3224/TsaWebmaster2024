@@ -25,7 +25,7 @@ const observer = new IntersectionObserver(
 
 //--------------------------------------------------------
 
-const textrotated = document.querySelectorAll('.eep-info')
+const textrotated = document.querySelectorAll('.eep-img')
 console.log(textrotated)
 let counter3 = 0;
 const textObserver = new IntersectionObserver(
@@ -59,7 +59,7 @@ const textObserver = new IntersectionObserver(
 
 //--------------------------------------------------------
 
-const imagerotate = document.querySelectorAll('.eep-img')
+const imagerotate = document.querySelectorAll('.eep-info')
 let counter2 = -1;
 const imgObserver = new IntersectionObserver(
     entries => {

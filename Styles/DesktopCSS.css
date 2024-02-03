@@ -526,7 +526,7 @@ div.cardTxt {
     
     transition: transform 400ms ease-in-out;
     animation-delay: 1s;
-    animation: fade-from-right 1.5s;
+    animation: fade-from-right 1s;
     opacity:1;
 }
   
@@ -535,7 +535,7 @@ div.cardTxt {
 
   transition: transform 400ms ease-in-out;
   animation-delay: 1s;
-  animation: fade-from-left 1.5s;
+  animation: fade-from-left 1s;
   opacity:1;
 }
 
@@ -660,24 +660,36 @@ div.cardTxt {
   z-index:-1; 
 }
 
-#firstBox, #secondBox, #thirdBox {
+#firstBox, #secondBox, #thirdBox, #b4, #b5, #b6, #b7, #b8, #b9 {
   width: 30%;
-  height: 90%;
+  height: 50%;
   --scale:1;
   font-size: 10px;
   scale: calc(var(--scale));
+ 
 }
 
-#firstBox:hover, #secondBox:hover, #thirdBox:hover {
-  --scale:1;
-  scale: calc(var(--scale) * 1.05) !important;
-}
-#earth {
-  /* background-color: white; */
+.revImg{
   position: absolute;
-  left: calc((100vw - 85vw)/2);
-  height: 1000px;
-  width: 85%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.revImg:hover{
+  --scale:1;
+  scale: calc(var(--scale) * 1.05);
+}
+
+
+#earth {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;  */
+
+  position: absolute;
+  /* left: calc((100vw - 85vw)/2); */
+  height: 100%;
+  width: 100%;
   margin: auto; 
 }
 

@@ -582,4 +582,85 @@ div.infoCardTxt p {
 
 
 
-/*>>>>>>> 04818464c9fe1198ae70bdb34c4161ae830a47c3
+/*>>>>>>> revolving door */
+
+#firstBox, #secondBox, #thirdBox, #b4, #b5, #b6, #b7, #b8, #b9 {
+  width: 30%;
+  height: 50%;
+  --scale:1;
+  font-size: 10px;
+  scale: calc(var(--scale));
+ 
+}
+
+.revImg{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.revImg:hover{
+  --scale:1;
+  scale: calc(var(--scale) * 1.05);
+}
+
+
+#earth {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;  */
+
+  position: absolute;
+  /* left: calc((100vw - 85vw)/2); */
+  height: 100%;
+  width: 100%;
+  margin: auto; 
+}
+
+div.infoCard {
+
+    background-color: rgba(24, 26, 30, 0.8);
+
+  
+    color: white; 
+  
+    display: flex;
+  
+    flex-direction: column;
+    border-radius: 20px;
+  
+    align-items: center;
+  
+    box-shadow: inset 0 0 10px rgba(24, 26, 30, 0.8);
+  
+  }
+  
+  div.infoCardTxt {
+  
+    background-color: rgba(39, 39, 49, .75);
+  
+    color: white; 
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    text-align: center;
+  
+    box-shadow: 0 0 10px rgba(39, 39, 49, .75);
+  
+  }
+  
+div.infoCardTxt p {
+    font-size: 16px;
+    padding: 5%;
+  }
+#clickme1, #clickme2, #clickme3 {
+  display: none;
+}
+#clickme1h, #clickme2h, #clickme3h {
+  display:inherit;
+
+  opacity: 50%;
+  font-size: small;
+  white-space: no-line-break;
+}
+

@@ -4,6 +4,7 @@
 <head>
 <script type="text/javascript" src="../Styles/DesktopCSS.css"></script>
 <script type="text/javascript" src="../JavaScript/anim.js"></script>
+<script type="text/javascript" src="/TsaWebmaster2024/JavaScript/rotate.js"></script>
 
 <meta charset="utf-8">
 <title>EcoHub</title>
@@ -11,9 +12,20 @@
 			
             
 
-              
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--          THIS PAGE'S TEXT GOT MESSED UP BECAUSE REVOLVING DOOR          -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------- -->
+<!--                    CHANGE THE DIVS AND CSS FOR THIS                     -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------- -->
+<!--                PLEASE DON'T MESS WITH REVOLVING DOOR!!!!                -->
+<!-- ----------------------------------------------------------------------- -->
+
 </head>
-<body>
+<body onload="setup()">
     <div class="wrapper">
         <ul>
           <li style="float:Left; font-size:200%;"><a href="index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
@@ -35,8 +47,41 @@
         <h4 style=" color: white;" class = "from-left">
             <i>Every Action Matters</i>
         </h4>
+        <div style="height:1000px">
+        <div id="earth" style="padding-bottom: .1vw; margin-bottom: auto;">
+   
+            <div onmousedown="pauseRevolvingDoor(this)" onmouseenter="hoverd(this)" onmouseleave="dehoverd(this)" id="firstBox" style="position:absolute;">
+              <div class="infoCard">
+                
+                <p style="color:#CD32C5; margin-bottom: 15px; font-size: math;">Recycle</p>
+                <p id="clickme1">click to pause revolving door!</p>
+                <div class="infoCardTxt">
+                    <p>Home recycling is an effective way to cut waste and environmental impact. Steps include knowing local guidelines, separating recyclables, cleaning containers, buying recycled products, and educating others. Benefits include resource conservation, energy savings, less landfill waste, lower emissions, and job creation. </p>
+                </div>
+              </div>  
+            </div>
+            <div onmousedown="pauseRevolvingDoor(this)" onmouseenter="hoverd(this)" onmouseleave="dehoverd(this)" id="secondBox" style="position:absolute;">
+              <div class="infoCard">
+                <p style="color:#C5CD32; margin-bottom: 15px; font-size: math;">Reducing</p>
+                <p id="clickme2">click to pause revolving door!</p>
+                <div class="infoCardTxt">
+                    <p>Reducing meat intake benefits the environment. Tips include exploring plant-based proteins, trying meat substitutes, adjusting recipes, gradually cutting meat consumption, and practicing mindful eating. Environmental gains include lower greenhouse gas emissions, efficient land use, water conservation, reduced deforestation, less pollution, energy savings, and biodiversity preservation.</p>
+                </div>
+              </div>  </div>
+            <div onmousedown="pauseRevolvingDoor(this)" onmouseenter="hoverd(this)" onmouseleave="dehoverd(this)" id="thirdBox" style="position:absolute;">
+              <div class="infoCard">
+                <p style="color:#32C5CD; margin-bottom: 15px; font-size: math;">Composting</p>
+                <p id="clickme3">click to pause revolving door!</p>
+                <div class="infoCardTxt">
+                    <p>Compost is a rewarding and simple process. Numerous online guides and tips are readily available. It is an environmentally friendly waste management practice with benefits such as reduced landfill waste, erosion control, less need for chemical fertilizers and pesticides, water conservation, and a lower carbon footprint. </p>
+                </div>
+              </div>  
+            </div>
+        
+         </div>
+         </div>
   
-        <div style="
+        <!-- <div style="
                 display: grid;
                 grid-template-columns: repeat(3,minmax(0,1fr));
                 grid-column-gap: 15px;
@@ -101,7 +146,7 @@
                         </div>
                     </div>
   
-        </div> 
+        </div>  -->
     </div>
 <!--<div class="hero-image" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('/Styles/Sources/pexels-singkham-1108572.jpg')">
  

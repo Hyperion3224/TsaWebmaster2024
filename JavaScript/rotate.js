@@ -1,198 +1,157 @@
-isClicked = false;
-atFront = 1;
-atFront2 = 1;
-atFront3 = -1;
-theta = 0;
-pos = [0,0];
-time = [0,0];
-velocity = [0,0];
-counter = 0;
-daddy = 0;
-leftBound = 0;
-rightBound = 0;
+function removePX(string){
+  return Number(string.slice(0, string.length-2));
+}
+function mp(x, y){
+  return .5*(x+y);
+}
+
+atFront = atFront2 = 1;
+atFront3 = -1; 
+const velocity = 1;
+var box1;
+var box2;
+var box3;
+var WIDTH1;
+var BIGW;
 bug = true;
+i = 0;
+timeoutID = 0;
 
-/*
-############################
-set left and right detection and other stuff to center (when center crosses or something)
-log velocity
-############################
-*/
-
-function start(element) {
-    isClicked = true;
-    box1 = document.getElementById("firstBox");
-    box2 = document.getElementById("secondBox");
-    box3 = document.getElementById("thirdBox");
-    
-  daddy = element.parentNode;
+function setup(){
+  i = 0;
+  box1 = document.getElementById("firstBox");
+  box2 = document.getElementById("secondBox");
+  box3 = document.getElementById("thirdBox");
+  WIDTH1 = box1.getBoundingClientRect().right-box1.getBoundingClientRect().left;
+  daddy = document.getElementById("earth");
   leftBound = daddy.getBoundingClientRect().left;
-  rightBound = daddy.getBoundingClientRect().right; 
-  
-}
-
-function end(){
-    isClicked = false;
-}
-
-function arccospos(left, right){
-  center = left+(right-left)/2
-  theCore = leftBound+(rightBound-leftBound)/2 //center of earth
-  if(center > theCore){ //to the right
-    acospos = 2*(right)/(rightBound) -1;
-  } else if(center < theCore) {
-    acospos = 2*(left)/(rightBound) -1;
-  } else {
-    acospos=0;
+  rightBound = daddy.getBoundingClientRect().right;
+  BIGW = Math.floor(rightBound - leftBound);
+  console.log(BIGW);
+  if(bug){
+    box1.style.left = `${BIGW/2 - WIDTH1/2}px`;
+    atFront = 1;
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    atFront2 = -1;
+    box3.style.left = `${BIGW/6-WIDTH1/2}px`; 
+    atFront3 = -1; 
+    box1.style.zIndex = 2;
+    box2.style.zIndex = 1;
+    box3.style.zIndex = 1;   
   }
+  bug = false;
 
-  if(acospos > 1){
-    return Math.acos(0.9);
-  } else if( acospos<-1){
-    return Math.acos(-0.9);
-  } else{
-    return Math.acos(acospos);
+
+  startRevolvingDoor();
+}
+
+function stopRevolvingDoor(){
+  i = -1;
+}
+
+function pauseRevolvingDoor(element){
+  i = 9999999;
+  startRevolvingDoor();
+  if(element.id == "firstBox"){
+    box1.style.left = `${BIGW/2 - WIDTH1/2}px`;
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box3.style.left = `${BIGW/6-WIDTH1/2}px`; 
+    atFront = 1;
+    box1.style.zIndex = 2;
+    atFront2 = atFront3 = -1;
+    box2.style.zIndex = box3.style.zIndex = 1;  
+  } else if(element.id == "secondBox"){  
+    box2.style.left = `${BIGW/2 - WIDTH1/2}px`; 
+    box3.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box1.style.left = `${BIGW/6-WIDTH1/2}px`; 
+    atFront2 = 1;
+    box2.style.zIndex = 2;
+    atFront3 = atFront = -1;
+    box1.style.zIndex = box3.style.zIndex = 1;
+    
+  } else if (element.id == "thirdBox"){
+    box3.style.left = `${BIGW/2 - WIDTH1/2}px`;
+    box2.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box1.style.left = `${BIGW/6-WIDTH1/2}px`; 
+    atFront3 = 1;
+    box3.style.zIndex = 2;
+    atFront32 = atFront = -1;
+    box1.style.zIndex = box2.style.zIndex = 1; 
   }
-
+  i = 10000000;
+  setTimeout(() => { i = 1; startRevolvingDoor(); }, 5000);
 }
 
-function slope(x1, y1, x2, y2){
-  return (y2-y1)/(x2-x1);
-}
+function startRevolvingDoor() {
+  timeoutID++; 
+  function myLoop() {         //  create a loop function
+    timeoutID = setTimeout(function() {
 
-function scaleCalc(left, right, aF) {
-    center = right;
-    theCore = leftBound+(rightBound-leftBound)/2;
-    if(center < theCore && aF > 0){
-     return slope(0, 2/3, theCore, 1)*(center-0)+ (2/3);
-    } else if(center > theCore && aF > 0) {
-     return slope(rightBound, 2/3, theCore, 1)*(center-rightBound)+ (2/3);
-    } else if(center > theCore && aF < 0) { 
-     return slope(rightBound, 2/3, theCore, 1/3)*(center-rightBound)+ (2/3);
-    } else {
-     return slope(0, 2/3, theCore, 1/3)*(center-0)+ (2/3);
-    } 
-}
+      i++;
 
-function abcd(event, element){
-  if(isClicked){
-      counter++;
-      index = counter%2;
-      other = (counter+1)%2;
-      pos[index] = event.clientX;
-      time[index] = Date.now();
-
-      if(bug){
-        box1.style.left = 0+"px";
-        box2.style.left = 600+"px";
-        box3.style.left = 900+"px";
-      }
-      bug = false;
-
-    if(element.id == "firstBox"){
-      rect = element.getBoundingClientRect();
-      srect = box2.getBoundingClientRect();      
-      trect = box3.getBoundingClientRect();      
-    } else if(element.id == "secondBox"){  
-      rect = box1.getBoundingClientRect();
-      srect = element.getBoundingClientRect();   
-      trect = box3.getBoundingClientRect();   
-    } else if (element.id == "thirdBox"){
       rect = box1.getBoundingClientRect();
       srect = box2.getBoundingClientRect();      
-      trect = element.getBoundingClientRect();
-    }
+      trect = box3.getBoundingClientRect();
 
-    function reLU(x){
-      n=.9
-      if (x>n){
-        return n;
-      } else if(x<-n) {
-        return -n;
-      } else {
-        return x;
+      //working bounce
+      onCooldown = false;
+      if ((rect.left < leftBound && !onCooldown)) { onCooldown = true; atFront = -atFront; box1.style.zIndex = 2; }
+      if ((srect.left < leftBound && !onCooldown)) { onCooldown = true; atFront2 = -atFront2; box2.style.zIndex = 2;}
+      if ((trect.left < leftBound && !onCooldown)) { onCooldown = true; atFront3 = -atFront3; box3.style.zIndex = 2;}
+      if ((rect.right > rightBound && !onCooldown)) { onCooldown = true; atFront = -atFront; box1.style.zIndex = 1; }
+      if ((srect.right > rightBound && !onCooldown)) { onCooldown = true; atFront2 = -atFront2; box2.style.zIndex = 1;}
+      if ((trect.right > rightBound && !onCooldown)) { onCooldown = true; atFront3 = -atFront3; box3.style.zIndex = 1;}
+
+      //calculate change in position
+      dx1 = velocity * atFront; //small change 
+      dx2 = velocity * atFront2;
+      dx3 = velocity * atFront3;
+      
+      function scaleCalc(rect, af) {
+        divMP = .5*(rect.right+rect.left);
+        divWidth = rect.right-rect.left;
+        jCP =(rect.left-leftBound)/(2*(rightBound-leftBound-divWidth))+.5; 
+        theCore = .5*(leftBound+rightBound);
+        const n = 4;                    
+        if( af > 0 && divMP < theCore) {jCP = (rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.875;}  // .875 < jCP < 1    || mp(.75, .75 + 1/n)
+        else if (af > 0 && divMP > theCore) { jCP = 1.125-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth));} // 1/n + mp(.75, .75 + 1/n)    - jCP
+        else if (af < 0 && divMP > theCore) { jCP =(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth))+.625 ; } // .75 + mp(0, .25)
+        else if (af < 0 && divMP < theCore) { jCP = .875-(rect.left-leftBound)/(n*(rightBound-leftBound-divWidth)) ; } // mp
+        return jCP;
       }
-    }
+
+      function update(box, dx, rect, atFront){
+        base = removePX(box.style.left);
+        box.style.setProperty('--scale', scaleCalc(rect, atFront));        
+        box.style.left = Math.floor(base + dx) + "px";
+      }
+      update(box1, dx1, rect, atFront);
+      update(box2, dx2, srect, atFront2);
+      update(box3, dx3, trect, atFront3);
  
-    dx = pos[index]-pos[other];
-    dt = time[index]-time[other];
-    velocity[index] = reLU(dx/dt);
- 
-    theta = arccospos(rect.left, rect.right);
-  
-
-    outofbounds = rightBound < rect.right
-    outofbounds2 = rightBound < srect.right
-    outofbounds3 = rightBound < trect.right
-    oub11 = leftBound > rect.left;
-    oub22 = leftBound > srect.left;
-    oub33 = leftBound > trect.left;
-    
-   
-    if(outofbounds) {
-        rect.right = rightBound + "px";
-        atFront *= -1;
-        box1.style.zIndex = -1; 
-    } 
-    if(outofbounds2) {
-        srect.right = rightBound + "px";
-        atFront2 *= -1;
-        box2.style.zIndex = -1; 
-    }  
-    if(outofbounds3) {
-        trect.right = rightBound + "px";
-        atFront3 *= -1;
-        box3.style.zIndex =  -1;
-    }  
-
-    l = 15;
-
-    minCheck1 = (atFront*l*velocity[index]*(Math.sin(theta)));
-    minCheck2 = (atFront2*l*velocity[index]*(Math.sin(theta)));
-    minCheck3 = (atFront3*l*velocity[index]*(Math.sin(theta)));
-
-    
-    t = 1;
-    if(minCheck1 > 0 && minCheck1 < t){
-      minCheck1 = t;
-      minCheck2 = atFront2*t;
-      minCheck3 = atFront3*t;
-    } else if (minCheck1 < 0 && minCheck1 > -t ){
-      minCheck1 = -t;
-      minCheck2 = atFront2*t;
-      minCheck3 = atFront3*t;
-    }
-
-    base = Number(box1.style.left.slice(0, box1.style.left.length-2));
-    box1.style.scale = scaleCalc(rect.left, rect.right, atFront);
-    box1.style.left = base + minCheck1+"px";
-
-    base2 = Number(box2.style.left.slice(0, box2.style.left.length-2));
-    box2.style.scale = scaleCalc(srect.left, srect.right, atFront2);
-    box2.style.left = base2 +minCheck2 +"px";
-
-    base3 = Number(box3.style.left.slice(0, box3.style.left.length-2));
-    box3.style.scale = scaleCalc(trect.left, trect.right, atFront3);
-    box3.style.left = base3 + minCheck3+"px";
-
-
-    if (oub11) {
-      box1.style.left = 0 + "px";
-      atFront *= -1;
-      box1.style.zIndex = 1;
+      if (i < 10000000 && i > 0) {
+        myLoop();  
+      }                     
+    }, 1)
   }
-    if (oub22) {
-      box2.style.left = 0 + "px";
-      atFront2 *= -1;
-      box2.style.zIndex = 1; 
+  if(timeoutID > 1) {
+    clearTimeout(timeoutID);
   }
-    if(oub33) {
-      box3.style.left = 0 + "px";
-      atFront3 *= -1;
-      box3.style.zIndex =  1;
-    }
+  //2 hours 42 minutes- average client won't stay for that long 
+  myLoop();  
+}
 
-    console.log("----");
- 
-  } 
+function hoverd(element) {
+  a = document.getElementById("clickme1");
+  b = document.getElementById("clickme2");
+  c = document.getElementById("clickme3");
+
+  if(element.id == "firstBox"){a.id = "clickme1h";}
+  else if(element.id == "secondBox"){b.id = "clickme2h";}
+  else if (element.id == "thirdBox"){c.id = "clickme3h";}
+}
+function dehoverd(element) {
+  if(element.id == "firstBox"){a.id = "clickme1";}
+  else if(element.id == "secondBox"){b.id = "clickme2";}
+  else if (element.id == "thirdBox"){c.id = "clickme3";}
 }

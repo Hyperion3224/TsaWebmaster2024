@@ -199,6 +199,20 @@ li a {
 
 }
 
+.hero-cover-right {
+  width: 30vw; 
+  height: 100vh; 
+  background-color: #111214; 
+  margin-left: auto; 
+  color: white;
+}
+
+.hero-cover-left {
+  width: 30vw; 
+  height: 100vh; 
+  background-color: #111214; 
+  color: white;
+}
 /* url('/Styles/Sources/mapex.jpg') */
 
 /* Place text in the middle of the image */

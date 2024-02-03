@@ -29,6 +29,15 @@ footer {
   height: 200px;
   background-color: #151518;
 }
+ 
+div p a, div p a:visited, div p a:hover, div p a:active {
+  
+  color: cyan;
+}
+footer a, footer a:visited, footer a:hover, footer a:active {
+  height:1em;
+  color: white;
+}
 
 
 @keyframes scroll {

@@ -2,7 +2,6 @@
 function removePX(string){
   return Number(string.slice(0, string.length-2));
 }
-
 function mp(x, y){
   return .5*(x+y);
 }
@@ -33,11 +32,12 @@ from .75-1
 //it takes ages to change, so i'll keep presets as comments :)
 }
 
+
+
 function update(box, boxinfo){
   box.style.setProperty('--scale', scaleCalc(boxinfo));        
   box.style.left = removePX(box.style.left) + velocity * boxinfo.atFront + "px";
 }
-
 function updateBackwards(box, boxinfo){
   box.style.setProperty('--scale', scaleCalc(boxinfo));        
   box.style.left = removePX(box.style.left) - velocity * boxinfo.atFront + "px";
@@ -47,13 +47,15 @@ function bounds(box, boxinfo){
   rect = box.getBoundingClientRect(); 
   if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2; }
   if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1;}
-}
-
+ } 
  function boundsBackwards(box, boxinfo){
   rect = box.getBoundingClientRect(); 
   if ((boxinfo.rectangle.left < leftBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 1; }
   if ((boxinfo.rectangle.right > rightBound )) {boxinfo.atFront = -boxinfo.atFront; box.style.zIndex = 2;}
-} 
+ } 
+
+
+
 
 const velocity = .75;
 
@@ -64,17 +66,17 @@ timeoutID = 0;
 //@@@add line here
 const box1info = {atFront: 1};
 const box2info = {atFront: 1};
-const box3info = {atFront: 1};
+const box3info = {atFront: -1};
 
-const box4info = {atFront: 1};
-const box5info = {atFront: 1};
-const box6info = {atFront: -1};
+const box4info = {atFront: -1};
+const box5info = {atFront: -1};
+const box6info = {atFront: 1};
 
-const box7info = {atFront: -1};
-const box8info = {atFront: -1};
+const box7info = {atFront: 1};
+const box8info = {atFront: 1};
 const box9info = {atFront: -1};
 
-//(also add corresponding id's to DesktopCSS.css )
+
 //@@@TO SCALE:: 
 function setup(){
   i = 0;
@@ -89,8 +91,8 @@ function setup(){
   box6 = document.getElementById("b6");
 
   box7 = document.getElementById("b7");
-  // box8 = document.getElementById("b8");
-  // box9 = document.getElementById("b9");
+  box8 = document.getElementById("b8");
+  box9 = document.getElementById("b9");
 
   //@@@add line here
   box1info.rectangle = box1.getBoundingClientRect();
@@ -101,9 +103,9 @@ function setup(){
   box5info.rectangle = box5.getBoundingClientRect();
   box6info.rectangle = box6.getBoundingClientRect();
 
-  //box7info.rectangle = box7.getBoundingClientRect();
-  // box8info.rectangle = box8.getBoundingClientRect();
-  // box9info.rectangle = box9.getBoundingClientRect();
+  box7info.rectangle = box7.getBoundingClientRect();
+  box8info.rectangle = box8.getBoundingClientRect();
+  box9info.rectangle = box9.getBoundingClientRect();
 
   const WIDTH1 = box1info.rectangle.right-box1info.rectangle.left;
   daddy = document.getElementById("earth");
@@ -114,30 +116,29 @@ function setup(){
   
   if(bug){
     //@@@add line here
-    box1.style.left = `${0}px`;
-    box2.style.left = `${BIGW*.4}px`;   
-    box3.style.left = `${BIGW*.7}px`; 
+    box1.style.left = `${3*BIGW/6 - 1-WIDTH1/2}px`;
+    box2.style.left = `${5*BIGW/6 -5- WIDTH1/2}px`;   
+    box3.style.left = `${BIGW/6-WIDTH1/2}px`; 
 
- 
-    box4.style.left = `${BIGW-WIDTH1}px`;
-    box5.style.left = `${BIGW*.7}px`;   
-    box6.style.left = `${BIGW*.4}px`; 
+    box4.style.left = `${3*BIGW/6 +1- WIDTH1/2}px`;
+    box5.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box6.style.left = `${BIGW/6-2-WIDTH1/2}px`; 
 
-    //box7.style.left = `${BIGW*.32}px`;
-    // box8.style.left = `${BIGW*.16}px`;   
-    // box9.style.left = `${0}px`; 
+    box7.style.left = `${3*BIGW/6 +3- WIDTH1/2}px`;
+    box8.style.left = `${5*BIGW/6 - WIDTH1/2}px`;   
+    box9.style.left = `${BIGW/6-1-WIDTH1/2}px`; 
     //@@@add line here
     box1.style.zIndex = 2;
-    box2.style.zIndex = 2;
-    box3.style.zIndex = 2;   
+    box2.style.zIndex = 1;
+    box3.style.zIndex = 1;   
 
-    box4.style.zIndex = 2;
+    box4.style.zIndex = 1;
     box5.style.zIndex = 2;
-    box6.style.zIndex = 1;   
+    box6.style.zIndex = 2;   
 
-    //box7.style.zIndex = 1;
-    // box8.style.zIndex = 1;
-    // box9.style.zIndex = 1;  
+    box7.style.zIndex = 2;
+    box8.style.zIndex = 1;
+    box9.style.zIndex = 1;  
   }
   bug = false;
 
@@ -145,8 +146,6 @@ function setup(){
 }
 
 //text revolving door only
-
-
 function pauseRevolvingDoor(element){
   i = 9999999;
   startRevolvingDoor();
@@ -180,6 +179,10 @@ function pauseRevolvingDoor(element){
   setTimeout(() => { i = 1; startRevolvingDoor(); }, 5000);
 }
 
+
+
+
+
 function startRevolvingDoor() {
   timeoutID++; 
   function myLoop() { 
@@ -196,35 +199,35 @@ function startRevolvingDoor() {
       box5info.rectangle = box5.getBoundingClientRect();
       box6info.rectangle = box6.getBoundingClientRect();
 
-     // box7info.rectangle = box7.getBoundingClientRect();
-      // box8info.rectangle = box8.getBoundingClientRect();
-      // box9info.rectangle = box9.getBoundingClientRect();
+      box7info.rectangle = box7.getBoundingClientRect();
+      box8info.rectangle = box8.getBoundingClientRect();
+      box9info.rectangle = box9.getBoundingClientRect();
 
        //@@@add line here
       bounds(box1, box1info);
       bounds(box2, box2info);
       bounds(box3, box3info);
 
-      bounds(box4, box4info);
-      bounds(box5, box5info);
-      bounds(box6, box6info);
+      boundsBackwards(box4, box4info);
+      boundsBackwards(box5, box5info);
+      boundsBackwards(box6, box6info);
 
-      //bounds(box7, box7info);
-      // bounds(box8, box8info);
-      // bounds(box9, box9info);
+      bounds(box7, box7info);
+      bounds(box8, box8info);
+      bounds(box9, box9info);
       
       //@@@add line here
       update(box1, box1info);
       update(box2, box2info);
       update(box3, box3info);
 
-      update(box4, box4info);
-      update(box5, box5info);
-      update(box6, box6info);
+      updateBackwards(box4, box4info);
+      updateBackwards(box5, box5info);
+      updateBackwards(box6, box6info);
 
-      //update(box7, box7info);
-      // update(box8, box8info);
-      // update(box9, box9info);
+      update(box7, box7info);
+      update(box8, box8info);
+      update(box9, box9info);
 
  
       if (i < 10000000 && i > 0) {

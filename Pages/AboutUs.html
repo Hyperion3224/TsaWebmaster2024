@@ -2,9 +2,28 @@
 <html>
     <head>
     <script type="text/javascript" src="../JavaScript/button.js"></script>
-        <link rel="stylesheet" href="../Styles/DesktopCSS.css" type="text/css">
+    <script type="text/javascript" src="../JavaScript/js.js"></script>
+  
+      <link rel="stylesheet" href="../Styles/DesktopCSS.css" type="text/css">
         <div class="hero-image" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('../Styles/Sources/autumn_park_aesthetic.jpg')">
+          
           <div class="wrapper">
+            <ul class = "landscape">
+              <li style="float:Left; font-size:200%;"><a href="index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
+              
+              <li><a href="Sources.html" class="hover-underline-animation-left landscape"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
+              <li><a href="AboutUs.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
+              <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
+              <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
+            </ul>
+            <h2 class="hero-text from-bottom" style="top:45%">Earth in Harmony.</h2>
+            <img class = "portrait burger" id = "burg" src = "/Styles/Sources/Icons/burger-menu-svgrepo-com.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; left: calc(100vw - 140px); top: 20px; z-index: 10;" onclick = "show()";>
+            <a class = "portrait" href = "index.html">				<img src = "/Styles/Sources/Icons/noun-tree-2094925.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; right: calc(100vw - 140px); top: 20px; z-index: 10;">
+            </a>
+            <div class = "mobileShadow reveal portrait" style = "position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9; "></div>
+          </div>   
+          
+          <!--<div class="wrapper">
             <ul>
               <li style="float:Left; font-size:200%;"><a href="index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
               <li><a href="Sources.html" class="hover-underline-animation-left"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
@@ -13,7 +32,7 @@
               <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
             </ul>
             <h2 class="hero-text from-bottom" style="top:45%">Earth in Harmony.</h2>
-          </div>
+          </div>-->
         </div>
         <div class="wrapper">
         </div>     
@@ -95,7 +114,19 @@
       </div>
 
 
-
+      <nav class = "sidebar" id = "sb">
+        <div class = "tabs">
+          <div class = "tab" style = "width: auto; padding: 0; ">			<img src = "/Styles/Sources/Icons/x-symbol-svgrepo-com.svg" style = "height: 70px; margin: 50px; margin-top: 45px;margin-bottom: 90px; transform: translateX(780px)" onclick = "show()">
+          </div>
+          <a href="./index.html"><div class = "tab other-tabs" style = "margin-top: 70px;"> Home&nbsp;</div></a>
+          <a href="./EnergyEfficientPractices.html"><div class = " tab other-tabs"> Efficient Practices&nbsp;</div></a>
+          <a href="./GreenEnergySolutions.html"><div class = " tab other-tabs"> Energy Solutions&nbsp;</div></a>
+          <a href="./AboutUs.html"><div class = " tab current-tab"> About Us&nbsp;</div></a>
+          <a href="./Sources.html"><div class = " tab other-tabs"> Sources&nbsp;</div></a>
+          </span>
+        </div>
+      </nav>
+      
       <footer>
         <div  class="wrapper" style="flex-direction: row;">
             <div style="width:50%; color:white; float:left; margin-bottom: 5vh;">

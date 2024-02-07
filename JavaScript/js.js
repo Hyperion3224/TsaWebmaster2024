@@ -44,3 +44,9 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+function show() {
+  console.log("showing");
+  document.getElementById('sb').classList.toggle('activeNav');
+  document.getElementById('burg').classList.toggle('activeNav');
+}

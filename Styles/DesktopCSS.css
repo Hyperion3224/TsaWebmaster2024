@@ -895,13 +895,57 @@ div.infoCardTxt p {
   white-space: no-line-break;
 }
 
+@media (orientation: portrait){
+  .landscape {
+    display: none; 
+  }
+}
 
 
+.portrait {
+  display: inline-block;
+  position: relative;
+}
+
+@media (orientation: landscape) {
+  .portrait {
+    display: none; 
+  }
+}
+
+.sidebar {
+  background-color: rgba(255, 255, 255, .9);
+  position: fixed;
+  top: 0;
+  width: 100vw; 
+  right: -100vw; 
+  height: 100vh;
+}
+
+#sb {
+  transition: .2s;
+  transition-timing-function: ease-out; 
+  z-index: 15;
+}
+
+#sb.activeNav {
+  right: 0; 
+}
 
 
+.tabs a{
+  font-size: 79px;
+}
 
+.tab {
+  font-family: 'Inter',sans-serif;
+  padding: 60px 0px 60px 100px;
+  height: 100px;
+  width: 100vw;
+}
 
-
-
+.current-tab {
+  background-color: white;
+}
 
 

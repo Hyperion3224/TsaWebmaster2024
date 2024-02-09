@@ -2,6 +2,7 @@
 <html>
 <head>
 <script type="text/javascript" src="/Styles/DesktopCSS.css"></script>
+<script type="text/javascript" src="../JavaScript/js.js"></script>
 <meta charset="utf-8">
 <title>EcoHub</title>
 <link href="/Styles/DesktopCSS.css" rel="stylesheet" type="text/css">
@@ -17,14 +18,19 @@
 
  ----------------------------------------------------------------->
  <div class="wrapper">
-    <ul>
-    <li style="float:Left; font-size:200%;"><a href="../index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
-    <li><a href="../Sources.html" class="hover-underline-animation-left"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
-    <li><a href="../AboutUs.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
-    <li><a href="../GreenEnergySolutions.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
-    <li><a href="../EnergyEfficientPractices.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
+    <ul class = "landscape">
+      <li style="float:Left; font-size:200%;"><a href="index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
+      
+      <li><a href="Sources.html" class="hover-underline-animation-left landscape"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
+      <li><a href="AboutUs.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
+      <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
+      <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
     </ul>
-</div>  
+    <img class = "portrait burger" id = "burg" src = "/Styles/Sources/Icons/burger-menu-svgrepo-com.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; left: calc(100vw - 140px); top: 20px; z-index: 10;" onclick = "show()";>
+    <a class = "portrait" href = "index.html">				<img src = "/Styles/Sources/Icons/noun-tree-2094925.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; right: calc(100vw - 140px); top: 20px; z-index: 10;">
+    </a>
+    <div class = "mobileShadow reveal portrait" style = "position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9; "></div>
+  </div>  
 
 <div class = "big-box" style = "display: flex; flex-direction: row; margin: auto; transform: translateX(-3vw)" >
     <div class="wrapper" style=" margin: auto; height: auto; font-size:36px;width: 25vw; padding: 0;">
@@ -80,37 +86,33 @@
      </div>
 </div>
 
-
-
- 
-
-
-	<footer>
-        <div  class="wrapper" style="flex-direction: row;">
-            <div style="width:50%; color:white; float:left; margin-bottom: 5vh;">
-                <div style="padding-left: 5vw;">
-                    <p>
-                        <strong>EcoHub</strong>
-                    </p>
-                    <p6>
-                        Copyright &copy; EcoHub 2023
-                    </p6>
-                </div>
-            </div>
-            <div style="width:50%; color:white; float:left; margin-bottom: 5vh; text-align: right;">
-                <div style="padding-right: 5vw;">
-                    <br><a style="width: fit-content; text-align: right;">
-                        <strong style="width: fit-content; text-align: right;">Quick Links: </strong>
-                    </a><br>
-                    <a href="../index.html" class="hover-underline-animation" style="width: fit-content">Home</a><br>
-					<a href="../EnergyEfficientPractices.html" class="hover-underline-animation" style="width: fit-content">Efficient Practices</a><br>
-                    <a href="../GreenEnergySolutions.html" class="hover-underline-animation" style="width: fit-content">Energy Solutions</a><br>
-                    <a href="../AboutUs.html" class="hover-underline-animation" style="width: fit-content">About Us</a><br>
-                    <a href="..Sources.html" class="hover-underline-animation" style="width: fit-content">Sources</a>
-                </div>
+<footer>
+    <div  class="wrapper" style="flex-direction: row;">
+        <div class = "footer-div left-align" style=" color:white; float:left; ">
+            <div style="padding-left: 5vw;">
+                <p>
+                    <strong>EcoHub</strong>
+                </p>
+                <p>
+                    Copyright &copy; EcoHub 2023
+                </p>
             </div>
         </div>
-    </footer>
-
+        <div class = "footer-div" style=" color:white; float:left;">
+            <div style="padding-right: 5vw; margin-bottom: 60px; ">
+                <br><a style="width: fit-content; text-align: right;">
+                    <strong style="width: fit-content; text-align: right;">Quick Links: </strong>
+                </a><br>
+                <div style = "height: 30px;"></div>
+                <a href="index.html" class="hover-underline-animation" style="width: fit-content">Home</a><br>
+                <a href="EnergyEfficientPractices.html" class="hover-underline-animation" style="width: fit-content">Efficient Practices</a><br>
+                <a href="GreenEnergySolutions.html" class="hover-underline-animation" style="width: fit-content">Energy Solutions</a><br>
+                <a href="AboutUs.html" class="hover-underline-animation" style="width: fit-content">About Us</a><br>
+                <a href="Sources.html" class="hover-underline-animation" style="width: fit-content">Sources</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../JavaScript/anim.js"></script>
+  </footer>
 </body>
 </html>

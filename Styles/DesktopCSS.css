@@ -289,7 +289,12 @@ li a {
     }
 }
 
-
+.card-holder {
+  justify-content: center; 
+  float: right; 
+  width:50%; 
+  padding-top: 10vw;
+}
 
 
 div.scroll-container {
@@ -912,6 +917,90 @@ div.infoCardTxt p {
     display: none; 
   }
 }
+
+.footer-div {
+  width: 50%;
+  margin-bottom: 5vh;
+  text-align: right;
+}
+
+
+
+@media (orientation: portrait) {
+  .card-holder {
+    width: 100vw;
+    float: none;
+    padding-left: 2.3vw;
+    top: 30vh;
+  }
+
+  .card-holder h2 {
+    font-size: 50px;
+  }
+  .explanationText {
+    margin-top:100px;
+    margin-bottom: 200px;
+  }
+
+  .explanationText h2 {
+    font-size: 80px;
+  }
+  .explanationText p{
+    display: block;
+    width: 100vw;
+  }
+
+  .card {
+    margin-bottom: 60px; 
+  }
+  .card-text {
+    font-size: 40px;
+  }
+
+  .footer {
+    margin-top: 20px;
+    position: static;
+    bottom: 0;
+    height: auto;
+    background-color: #151518;
+  }
+
+  .footer-div {
+    width: 100vw;
+    margin-bottom: 0px;
+    float: left;
+    text-align: left;
+  }
+
+  .footer-div div {
+    padding-left: 5vw;
+  }
+
+  .footer-div p, .footer-div .p6{
+    font-size: 40px;
+  }
+
+  .footer-div div p {
+    font-size: 40px;
+    margin-bottom: 5px; 
+ 
+  }
+
+  .footer-div a {
+    font-size: 40px; 
+  }
+
+  .hero-image {
+    height: 248vw;
+  }
+}
+
+@media(orientation: landscape){
+  .left-align{
+    text-align: left;
+  }
+}
+
 
 .sidebar {
   background-color: rgba(255, 255, 255, .9);

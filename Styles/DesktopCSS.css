@@ -948,11 +948,7 @@ div.infoCardTxt p {
   position: relative;
 }
 
-@media (orientation: landscape) {
-  .portrait {
-    display: none; 
-  }
-}
+
 
 .footer-div {
   width: 50%;
@@ -1071,4 +1067,83 @@ div.infoCardTxt p {
 
 .current-tab {
   background-color: white;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 97.5vw;
+  height: 97.5vw;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  height: 90vw;
+  width: 90vw;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+
+.flip-card-front img {
+  height: 90vw;
+  width: 90vw;
+  border-radius: 15px; 
+  
+}
+
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color:  rgba(39, 39, 49, .75);;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-label {
+  position: absolute;
+  color: white;  
+  text-shadow: 1px 1px 16px black;
+  font-size: 120px;
+}
+
+@media (orientation: portrait) {
+  #eep-heading, #eep-subheading {
+    margin-left: 13vw;
+  }
+  
+
+}
+
+
+@media (orientation: landscape) {
+  .portrait {
+    display: none; 
+  }
 }

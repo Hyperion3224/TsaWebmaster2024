@@ -2,12 +2,23 @@
 <html>
 <head>
 <script type="text/javascript" src="/Styles/DesktopCSS.css"></script>
+<script type="text/javascript" src="/JavaScript/button.js"></script>
+
 <script type="text/javascript" src="/JavaScript/js.js"></script>
 <meta charset="utf-8">
 <title>EcoHub</title>
 <link href="/Styles/DesktopCSS.css" rel="stylesheet" type="text/css">
+<div class="hero-image portrait" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('/Styles/Sources/EnergyTypeImages/pexels-manny-6601008.jpg')">
+          
+    <div class="wrapper portrait" style = "position: relative; display: grid;">
+      <h2 class="hero-text from-bottom" style="position: absolute; align-self: center; justify-self: center; transform: translateY(44vh) translateX(-22vw)">Solar Energy</h2>
+      <img class = "portrait burger" id = "burg" src = "/Styles/Sources/Icons/burger-menu-svgrepo-com.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; left: calc(100vw - 140px); top: 20px; z-index: 10;" onclick = "show()";>
+      <a class = "portrait" href = "index.html">				<img src = "/Styles/Sources/Icons/noun-tree-2094925.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; right: calc(100vw - 140px); top: 20px; z-index: 10;">
+      </a>
+      <div class = "mobileShadow reveal portrait" style = "position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9; "></div>
+    </div>   
 
-    
+  </div>
 </head>
 <body>
 <!-----------------------------------------------------------------
@@ -17,6 +28,67 @@
 
 
  ----------------------------------------------------------------->
+ <div style="height:5vw" class = "portrait"></div>
+      <div class="wrapper portrait" style="margin-top:1vw;">
+
+
+        <div style="color: white;">
+
+          <div class="abc" style="border-radius: 50px;">
+            <div class="aucardTxt">
+              <h3 class="aucardH2">What is solar power?</h3>
+              <p class="card-text-au">
+                Solar power is energy derived from the light of the sun, which allows it
+                     to be both the cleanest and most plentiful energy source available.
+              </p>
+            </div>
+          </div>
+
+          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+              <h3 class="aucardH2">How does solar power work?</h3>
+              <p class="card-text-au">
+                The three main ways to use energy include photovoltaics, which directly convert the sun’s
+                     energy into electricity in an electronic process; solar heating and cooling (SHC), which use the sun’s 
+                     heat to warm spaces and water; and concentrating solar power (CSP), which runs traditional electricity-
+                     generating turbines. 
+              </p>
+            </div>
+          </div>
+
+          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+              <h3 class="aucardH2"> How much does solar power cost to implement?</h3>
+              <p class="card-text-au">
+                In the United States, for a 5kw installed system, prices are generally under $3 regarding 
+                    cash purchase $/watt and around $13k-$14k regarding cash purchase with the notable exception of Oregon, 
+                    where costs are somewhat more expensive. 
+              </p>
+            </div>
+          </div>
+
+          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+              <h3 class="aucardH2">How much money does solar power save in the long run?</h3>
+              <p class="card-text-au">
+                U.S. Customers save around $1,500 a year using solar power on average, accumulating to 
+                    $37,500 after 25 years, but numbers may vary from $10k to $90k overall with regards to certain variables. 
+              </p>
+            </div>
+          </div>
+
+          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+              <h3 class="aucardH2">How do tax benefits regarding solar power work?</h3>
+              <p class="card-text-au">
+                A 30% tax credit is applied to solar energy, meaning that for a 5kw installed system, the 
+                    price paid by the end user is more likely to be around $2 regarding cash purchase $/watt and around $10k 
+                    regarding cash purchase. 
+              </p>
+            </div>
+          </div>
+     
+            <br>
+        </div>
+
+     
+      </div>
  <div class="wrapper">
     <ul class = "landscape">
       <li style="float:Left; font-size:200%;"><a href="../index.html" class="hover-underline-animation-left" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
@@ -32,7 +104,7 @@
     <div class = "mobileShadow reveal portrait" style = "position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9; "></div>
   </div>  
 
-<div class = "big-box" style = "display: flex; flex-direction: row; margin: auto; transform: translateX(-3vw)" >
+<div class = "big-box landscape" style = "display: flex; flex-direction: row; margin: auto; transform: translateX(-3vw)" >
     <div class="wrapper" style=" margin: auto; height: auto; font-size:36px;width: 25vw; padding: 0;">
 
         <div class = "slide-in-image from-left" style = "margin-left: 5vw">
@@ -124,7 +196,7 @@
         </div>
     </div>
   </footer>
-  <script type="text/javascript" src="../JavaScript/anim.js"></script>
+  <script type="text/javascript" src="/JavaScript/anim.js"></script>
 </body>
 
 </html>

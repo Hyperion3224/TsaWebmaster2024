@@ -89,6 +89,35 @@ footer a, footer a:visited, footer a:hover, footer a:active {
   }
 }
 
+@font-face {
+  font-family: Silka;
+  src: url("/Styles/Sources/silka-regular-webfont.ttf");
+}
+
+@font-face {
+  font-family: Against;
+  src: url("/Styles/Sources/against regular.ttf");
+}
+
+@font-face {
+  font-family: Hoves-Pro;
+  src: url("/Styles/Sources/TT Hoves Pro Trial Regular.ttf")
+}
+
+@font-face {
+  font-family: Cushion;
+  src: url("/Styles/Sources/LTCushion-Medium.ttf")
+}
+
+@font-face {
+  font-family: Poppins; 
+  src: url("/Styles/Sources/Poppins-Regular.ttf")
+}
+
+@font-face {
+  font-family: Poppins-Light; 
+  src: url("/Styles/Sources/Poppins-Light.ttf")
+}
 
 .gallery {
   column-count: 3;
@@ -184,6 +213,7 @@ li a {
   display: inline-block;
   font-size: 175%;
   transition: transform .035s;
+  font-family: 'Poppins', Arial;
 }
 
 
@@ -1168,5 +1198,38 @@ div.infoCardTxt p {
   .landscape div, .landscape h1{
     display: none;
   }
+
 }
 
+
+p {
+  font-family: Poppins, sans-serif;
+}
+
+.logo {
+  font-family: Against, 'Times New Roman'; 
+}
+
+.silka {
+  font-family: Silka, sans-serif;
+}
+
+.hoves-pro {
+  font-family: Hoves-Pro, sans-serif; 
+}
+
+.cushion {
+  font-family: Cushion, sans-serif;
+}
+
+.poppins {
+  font-family: Poppins, sans-serif; 
+}
+
+.inter {
+  font-family: Inter, Arial;
+}
+
+.poppins-light {
+  font-family: Poppins-Light;
+}

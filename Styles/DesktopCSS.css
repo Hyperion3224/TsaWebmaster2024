@@ -12,7 +12,7 @@ head {
   font-family: 'Times New Roman', Times, serif;
 }
 body {
-  font-family: Inter,sans-serif;
+  font-family: Poppins-Light ,sans-serif;
 }
 
 
@@ -89,6 +89,7 @@ footer a, footer a:visited, footer a:hover, footer a:active {
   }
 }
 
+
 @font-face {
   font-family: Silka;
   src: url("/Styles/Sources/silka-regular-webfont.ttf");
@@ -117,6 +118,11 @@ footer a, footer a:visited, footer a:hover, footer a:active {
 @font-face {
   font-family: Poppins-Light; 
   src: url("/Styles/Sources/Poppins-Light.ttf")
+}
+
+@font-face {
+  font-family: Poppins-Bold; 
+  src: url("/Styles/Sources/Poppins-Bold.ttf")
 }
 
 .gallery {
@@ -213,7 +219,7 @@ li a {
   display: inline-block;
   font-size: 175%;
   transition: transform .035s;
-  font-family: 'Poppins', Arial;
+  font-family: 'Poppins-Light', Arial;
 }
 
 
@@ -528,14 +534,14 @@ div.card {
 
 .clockwise {
   transition: transform 200ms ease-in-out;
-  animation: fade-from-right .6s, clockwise .5s;
+  animation: clockwise-from-right .5s;
   animation-delay: 0s, .6s;
 }
 
 .counter-clockwise {
   transition: transform 200ms ease-in-out;
-  animation: fade-from-left .6s, counter-clockwise .5s;
-  animation-delay: 0s, .6s;
+  animation: counter-clockwise-from-left .5s;
+  animation-delay: 0s;
 }
 
 
@@ -545,8 +551,9 @@ div.card {
   color: #c9c9c9;
   font-size: 200%;
   text-align: center;
-  margin-top:0.3em;
-  margin-bottom:0.2em
+  margin-top:0em;
+  margin-bottom:0.2em;
+  font-family: Poppins;
 }
 .card-text {
   font-size: 135%;
@@ -669,6 +676,8 @@ div.infoCardTxt p {
 @keyframes fade-from-bottom-hero {from {opacity: 0; transform: translateY(50%) translateX(-50%)} to {opacity: 1; transform: translateY(-50)}}
 @keyframes clockwise {from{transform: rotate(0)} to {transform: rotate(4);}}
 @keyframes counter-clockwise {from{transform: rotate(0)} to {transform: rotate(-4);}}
+@keyframes counter-clockwise-from-left {from {opacity: 0; transform: translateX(-100%) rotate(0)} to {opacity: 1; transform: translateX(0) rotate(-4)}}
+@keyframes clockwise-from-right {from {opacity: 0; transform: translateX(100%) rotate(0)} to {opacity: 1; transform: translateX(0) rotate(4)}}
 /*<<<<<<< HEAD
 
 
@@ -745,7 +754,7 @@ div.show2 {
   font-size: 25px;
   padding-top:5px;
   padding-bottom: 5px;
- 
+ font-family: Poppins;
 }
 
 
@@ -887,6 +896,24 @@ div.show2 {
   border-radius: 25px;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+.eep-info.show {
+   
+  transition: transform 400ms ease-in-out;
+  animation-delay: 1s;
+  animation: clockwise-from-right 1.5s;
+  opacity:1;
+}
+
+
+.eep-info.show2 {
+
+
+transition: transform 400ms ease-in-out;
+animation-delay: 1s;
+animation: counter-clockwise-from-left 1.5s;
+opacity:1;
 }
 
 /*>>>>>>> revolving door */
@@ -1203,7 +1230,7 @@ div.infoCardTxt p {
 
 
 p {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins-Light, sans-serif;
 }
 
 .logo {
@@ -1233,3 +1260,21 @@ p {
 .poppins-light {
   font-family: Poppins-Light;
 }
+
+p1 {
+  font-family: Poppins-Light, sans-serif;
+}
+
+p2 {
+  font-family: Poppins-Light, sans-serif;
+}
+
+h1 {
+  font-family: Poppins, sans-serif;
+}
+
+strong {
+  font-family: Poppins, sans-serif;
+}
+
+

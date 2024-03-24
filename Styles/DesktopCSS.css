@@ -1277,4 +1277,9 @@ strong {
   font-family: Poppins, sans-serif;
 }
 
-
+.infoCard p{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 97%;
+}

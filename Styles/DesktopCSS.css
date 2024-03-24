@@ -8,13 +8,6 @@ body, head, html {
   margin: 0px;
   overflow-x: hidden;
 }
-head {
-  font-family: 'Times New Roman', Times, serif;
-}
-body {
-  font-family: Poppins-Light ,sans-serif;
-}
-
 
 /* testing */
 .testing {
@@ -219,7 +212,6 @@ li a {
   display: inline-block;
   font-size: 175%;
   transition: transform .035s;
-  font-family: 'Poppins-Light', Arial;
 }
 
 

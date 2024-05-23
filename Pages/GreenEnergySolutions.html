@@ -1,74 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="../Styles/DesktopCSS.css"></script>
-  <script type="text/javascript" src="../JavaScript/anim.js"></script>
-  <script type="text/javascript" src="../JavaScript/js.js"></script>
-
   <meta charset="utf-8">
   <title>EcoHub</title>
   <link href="../Styles/DesktopCSS.css" rel="stylesheet" type="text/css">
-        
-              
 </head>
 <body>
-  <div style="min-height: 1250px;">
-    
-    <div class="wrapper">
-      <ul class = "landscape">
-        <li style="float:Left; font-size:200%; font-family: Against;"><a href="index.html" class="hover-underline-animation-left logo" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
-        
-        <li><a href="Sources.html" class="hover-underline-animation-left landscape"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
-        <li><a href="AboutUs.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
-        <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
-        <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
+  <div style="min-height: 100%;">
+    <div style="width: 100%; height: 20vh; background-image: linear-gradient(180deg, #253c59, transparent); position: fixed; top: 0; left: 0; z-index: 1;"></div>
+    <canvas id="bg" style="z-index: 0;"></canvas>
+    <div class="wrapper" style="background-color: transparent; position: fixed; left: 20%; z-index: 3;">
+      <ul class="landscape">
+        <li style="float:Left; font-size:200%; font-family: Against;">
+          <a href="index.html" class="hover-underline-animation-left logo" id="navButton">EcoHub</a>
+        </li>
+        <li><a href="Sources.html" class="hover-underline-animation-left landscape" id="navButton">Sources</a></li>
+        <li><a href="AboutUs.html" class="hover-underline-animation-left landscape" id="navButton">About Us</a></li>
+        <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left landscape" id="navButton">Energy Solutions</a></li>
+        <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left landscape" id="navButton">Efficient Practices</a></li>
       </ul>
-
-      <img class = "portrait burger" id = "burg" src = "/Styles/Sources/Icons/burger-menu-svgrepo-com.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; left: calc(100vw - 140px); top: 20px; z-index: 10;" onclick = "show()";>
-      <a class = "portrait" href = "index.html">				<img src = "/Styles/Sources/Icons/noun-tree-2094925.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; right: calc(100vw - 140px); top: 20px; z-index: 10;">
+      
+      <img class="portrait burger" id="burg" src="/Styles/Sources/Icons/burger-menu-svgrepo-com.svg" style="align-self:end; justify-self: end; width: 100px; position: fixed; left: calc(100vw - 140px); top: 20px; z-index: 10;" onclick="show()">
+      <a class="portrait" href="index.html">
+        <img src="/Styles/Sources/Icons/noun-tree-2094925.svg" style="align-self:end; justify-self: end; width: 100px; position: fixed; right: calc(100vw - 140px); top: 20px; z-index: 10;">
       </a>
-      <div class = "mobileShadow reveal portrait" style = "position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9; "></div>
-    </div>      
-  </div>
-  <nav class = "sidebar" id = "sb">
-		<div class = "tabs">
-			<div class = "tab" style = "width: auto; padding: 0; ">			<img src = "/Styles/Sources/Icons/x-symbol-svgrepo-com.svg" style = "height: 70px; margin: 50px; margin-top: 45px;margin-bottom: 90px; transform: translateX(780px)" onclick = "show()">
-			</div>
-			<a href="./index.html"><div class = "tab other-tabs" style = "margin-top: 70px;"> Home&nbsp;</div></a>
-			<a href="./EnergyEfficientPractices.html"><div class = " tab other-tabs"> Efficient Practices&nbsp;</div></a>
-			<a href="./GreenEnergySolutions.html"><div class = " tab current-tab"> Energy Solutions&nbsp;</div></a>
-			<a href="./AboutUs.html"><div class = " tab other-tabs"> About Us&nbsp;</div></a>
-			<a href="./Sources.html"><div class = " tab other-tabs"> Sources&nbsp;</div></a>
-			</span>
-		</div>
-	</nav>
-  <footer>
-    <div  class="wrapper" style="flex-direction: row;">
-        <div class = "footer-div left-align" style=" color:white; float:left; ">
-            <div style="padding-left: 5vw;">
-                <p>
-                    <strong>EcoHub</strong>
-                </p>
-                <p>
-                    Copyright &copy; EcoHub 2023
-                </p>
-            </div>
-        </div>
-        <div class = "footer-div" style=" color:white; float:left;">
-            <div style="padding-right: 5vw; margin-bottom: 60px; ">
-                <br><a style="width: fit-content; text-align: right;">
-                    <strong style="width: fit-content; text-align: right;">Quick Links: </strong>
-                </a><br>
-                <div style = "height: 30px;"></div>
-                <a href="index.html" class="hover-underline-animation" style="width: fit-content">Home</a><br>
-                <a href="EnergyEfficientPractices.html" class="hover-underline-animation" style="width: fit-content">Efficient Practices</a><br>
-                <a href="GreenEnergySolutions.html" class="hover-underline-animation" style="width: fit-content">Energy Solutions</a><br>
-                <a href="AboutUs.html" class="hover-underline-animation" style="width: fit-content">About Us</a><br>
-                <a href="Sources.html" class="hover-underline-animation" style="width: fit-content">Sources</a>
-            </div>
-        </div>
+      <div class="mobileShadow reveal portrait" style="position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9;"></div>
+      
+    </div>    
+    <div class="threeOverlay">
+      <div>
+        <h1 id="geothermal">Geothermal Power</h1>
+        <em>What is geothermal power?</em>
+          <p>Geothermal power is obtained by warming fluids using the earth's heat in order to turn them into steam which is then pushed through a turbine to generate electricity. The steam is then cooled back into a liquid and recycled.</p>
+        <em>How does geothermal power work?</em>
+          <p>Heat from the earth can be used directly for heat, or steam from geothermal energy processes can be used to generate electricity.</p>
+        <em>How much does geothermal power cost to implement?</em>
+          <p>On average, homeowners can expect geothermal heating and cooling to be around $18k-$30k, although those numbers may be higher when considering higher-end heat pump systems for larger homes.</p>
+        <em>How much money does geothermal power save in the long run?</em>
+          <p>In comparison to an existing A/C and Furnace setup, geothermal power may save the user $46,412 after some decades overall as compared to the $5,310 saved by upgraded conventional power.</p>
+        <em>How do tax benefits regarding geothermal power work?</em>
+          <p>A 30% tax credit is applied to the cost of purchasing and installing a heat pump system at a home used as a residence by the taxpayer.</p>
+      </div>
+      <div>
+        <h1 id="hydro">Hydro Power</h1>
+        <em>What is hydropower?</em>
+          <p>Hydropower, otherwise known as hydroelectric power, is electricity generated by the movement of water in nature, such as rivers.</p>
+        <em>How does hydropower work?</em> 
+          <p>Hydropower plants utilize flow from a water source by allowing the water to enter the plant and then using the force of the moving water to turn turbine blades, powering a generator and producing electricity.</p>
+        <em>How much does hydropower cost to implement?</em>
+          <p>It depends on the size of the structure you want to power. Hydroelectricity systems in 2021 averaged 2,135 USD in installation costs per kilowatt installed. Homes from 1,000-1,500 sq. ft. are recommended to have a 6 kW - 8.5 kW residential generator, homes from 1,500-2,000 sq. ft. are recommended to have an 8.5 kW - 10 kW residential generator, homes from 2,000-2,500 sq. ft. are recommended to have a 10 kW - 14 kW residential generator, and homes from 2,500-3,000+ sq. ft are recommended to have a 18.5 kW residential generator or a larger commercial generator.</p>
+        <em>How much money does hydropower save in the long run?</em>
+          <p>Hydropower in the U.S. costs about 0.85 cents per kilowatt-hour, making it about 50% the cost of nuclear power, 40% the cost of fossil fuels, and 25% the cost of natural gas.</p>
+        <em>How do tax benefits regarding hydropower work?</em>
+          <p>Unfortunately, hydropower for homeowners does not qualify for the Residential Clean Energy Credit, which means regular tax prices will apply to the cost of energy obtained through hydropower systems.</p>
+      </div>
+      <div>
+        <h1 id="nuclear">Nuclear Power</h1>
+        <em>What is nuclear power?</em>
+          <p>Nuclear energy is the energy in the nucleus of an atom. In order to generate electricity using it, the energy must first be released from the atom by nuclear fission, or splitting atoms.</p>
+        <em>How does nuclear power work?</em> 
+          <p>Uranium pellets undergo nuclear fusion, releasing energy and generating heat. This warms a cooling agent, producing steam. The steam then drives turbines of powers to create electricity.</p>
+        <em>How much does nuclear power cost to implement?</em>
+          <p>Studies indicate that transitioning to a 100% renewable electric system would cost thousands of dollars per household per year through 2040.</p>
+        <em>How much money does nuclear power save in the long run?</em>
+          <p>By allowing natural gas to still generate a small portion of the electricity, allowing existing nuclear plants to operate would save about $500 billion.</p>
+        <em>How do tax benefits regarding nuclear power work?</em>
+          <p>Unfortunately, there are no tax benefits related to nuclear power that homeowners can directly access.</p>
+      </div>
+      <div>
+        <h1 id="solar">Solar Energy</h1>
+        <em>What is solar energy?</em>
+          <p>Solar power is energy derived from the light of the sun, which allows it to be both the cleanest and most plentiful energy source available.</p>
+        <em>How does solar energy work?</em> 
+          <p>The three main ways to use energy include photovoltaics, which directly convert the sun’s energy into electricity in an electronic process; solar heating and cooling (SHC), which use the sun’s heat to warm spaces and water; and concentrating solar power (CSP), which runs traditional electricity- generating turbines.</p>
+        <em>How much does solar energy cost to implement?</em>
+          <p>In the United States, for a 5kw installed system, prices are generally under $3 regarding cash purchase $/watt and around $13k-$14k regarding cash purchase with the notable exception of Oregon, where costs are somewhat more expensive.</p>
+        <em>How much money does solar energy save in the long run?</em>
+          <p>U.S. Customers save around $1,500 a year using solar power on average, accumulating to $37,500 after 25 years, but numbers may vary from $10k to $90k overall with regards to certain variables.</p>
+        <em>How do tax benefits regarding solar energy work?</em>
+          <p>A 30% tax credit is applied to solar energy, meaning that for a 5kw installed system, the price paid by the end user is more likely to be around $2 regarding cash purchase $/watt and around $10k regarding cash purchase.</p>
+      </div>
+      <div>
+        <h1 id="wind">Wind Energy</h1>
+        <em>What is wind energy?</em>
+          <p>Wind power is the term for the mechanical energy from wind spinning wind turbines.</p>
+        <em>How does wind energy work?</em> 
+          <p>An inflow of wind to a wind turbine turns the blades and rotor, which then spin the main shaft and gearbox, which then spin the generator, generating electricity.</p>
+        <em>How much does wind energy cost to implement?</em>
+          <p>Small wind turbines cost around $3k-$5k per kilowatt of power capacity, meaning that for projects desiring 5-15kW of wind power capacity, the estimated price would be around $15k-$75k for a small wind turbine project.</p>
+        <em>How much money does wind energy save in the long run?</em>
+          <p>One study by Synapse Energy Economics revealed that the incorporation of wind energy in the U.S. Midwest could result in savings for consumers ranging from $65 to $200 annually, meaning that it could save people thousands of dollars within their lifetime.</p>
+        <em>How do tax benefits regarding wind energy work?</em>
+          <p>A 30% tax credit is applied to the cost of purchasing and installing wind turbines at your main home plus one other.</p>
+      </div>
     </div>
-  </footer>
-  <script type="text/javascript" src="../JavaScript/anim.js"></script>
+  </div>
+  <nav class="sidebar" id="sb">
+    <div class="tabs">
+      <div class="tab" style="width: auto; padding: 0;">
+        <img src="/Styles/Sources/Icons/x-symbol-svgrepo-com.svg" style="height: 70px; margin: 50px; margin-top: 45px;margin-bottom: 90px; transform: translateX(780px)" onclick="show()">
+      </div>
+      <a href="./index.html"><div class="tab other-tabs" style="margin-top: 70px;">Home&nbsp;</div></a>
+      <a href="./EnergyEfficientPractices.html"><div class="tab other-tabs">Efficient Practices&nbsp;</div></a>
+      <a href="./GreenEnergySolutions.html"><div class="tab current-tab">Energy Solutions&nbsp;</div></a>
+      <a href="./AboutUs.html"><div class="tab other-tabs">About Us&nbsp;</div></a>
+      <a href="./Sources.html"><div class="tab other-tabs">Sources&nbsp;</div></a>
+    </div>
+  </nav>
+  <script type="module" src="../JavaScript/threeJs.js"></script>
 </body>
 </html>

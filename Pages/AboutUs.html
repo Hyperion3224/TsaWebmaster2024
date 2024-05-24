@@ -5,7 +5,7 @@
     <script type="text/javascript" src="../JavaScript/js.js"></script>
   
       <link rel="stylesheet" href="../Styles/DesktopCSS.css" type="text/css">
-        <div class="hero-image" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('../Styles/Sources/autumn_park_aesthetic.jpg')">
+        <div class="hero-image portrait" style="background-image: linear-gradient( rgba(24,26, 30, .5), rgba(24,26, 30, .5)), url('../Styles/Sources/autumn_park_aesthetic.jpg')">
           
           <div class="wrapper">
             <ul class = "landscape">
@@ -35,6 +35,20 @@
           </div>-->
         </div>
         <div class="wrapper">
+          <ul class = "landscape">
+            <li style="float:Left; font-size:200%; font-family: Against;"><a href="index.html" class="hover-underline-animation-left logo" onmousemove="storePos(event, this)" id="navButton">EcoHub</a></li>
+            
+            <li><a href="Sources.html" class="hover-underline-animation-left landscape"  onmousemove="storePos(event, this)" id="navButton">Sources</a></li>
+            <li><a href="AboutUs.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">About Us</a></li>
+            <li><a href="GreenEnergySolutions.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Energy Solutions</a></li>
+            <li><a href="EnergyEfficientPractices.html" class="hover-underline-animation-left landscape" onmousemove="storePos(event, this)" id="navButton">Efficient Practices</a></li>
+          </ul>
+          <img class = "portrait burger" id = "burg" src = "/Styles/Sources/Icons/burger-menu-svgrepo-com.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; left: calc(100vw - 140px); top: 20px; z-index: 10;" onclick = "show()";>
+          <a class = "portrait" href = "index.html">				<img src = "/Styles/Sources/Icons/noun-tree-2094925.svg" style = "align-self:end; justify-self: end; width: 100px; position: fixed; right: calc(100vw - 140px); top: 20px; z-index: 10;">
+          </a>
+          <div class = "mobileShadow reveal portrait" style = "position: fixed; top: 0; width: 100vw; background-image: linear-gradient(rgba(24, 30, 24, 0.7), rgba(0, 0, 0, 0)); height: 200px; z-index: 9; "></div>
+        </div>   
+        <div class="wrapper">
         </div>     
     </head>
     
@@ -51,11 +65,46 @@
  ----------------------------------------------------------------->
       <div style="height:5vw"></div>
       <div class="wrapper" style="margin-top:1vw;">
+        <div style = "display: flex; flex-direction: row; width: 100vw; height: 100vh;">
+          <div style = "width: 40vw">
+            <h1 id = "about-heading" style=" color: white; margin-top: -10vh;" class = "from-left">
+              <b style = "font-family: Poppins-Bold; font-weight: normal; font-size: 80px;">About Us</b>
+          </h1>
+          <h4 id = "about-subheading" style=" color: white; " class = "from-left">
+              <i style = "font-family: Poppins-Light; font-weight:normal; font-size:36px;">Who We Are and What We Do</i>
+          </h4>
+          <img src = ../Styles/Sources/pexels-matthew-montrone-230847-1179225.jpg style = "width: 100%; height: 80%; border-radius: 20px; object-fit: cover;"> 
+          </div>
+          <div style = "width: 53vw; padding: 30px;">
 
+            <div class="aucardTxt" style = "margin-bottom: -30px;">
+              <h3 class="aucardH2">Welcome To Our Mission: <span style="color:rgb(10, 161, 65); white-space: no-line-break;">Earth</span> in Harmony.</h3>
+              <p class="card-text-au" style = "font-size: min(4vh, 19px); margin-top: -20px;">
+                 We believe that the power to create positive change lies within each individual, and by empowering people with knowledge, we can collectively lead Earth towards a future of negative carbon emissions. Our website serves as a beacon of information, offering practical insights and guidance on how everyone can contribute to a sustainable and eco-friendly lifestyle.
+              </p>
+            </div>
+
+            <div class="aucardTxt" style = "margin-bottom: -30px;">
+              <h3 class="aucardH2">You Can Lead a Horse to <span style="color:rgb(0, 166, 255); white-space: no-line-break; margin-top: -20px;">Water</span>, But You Can't Make It Drink.</h3>
+              <p class="card-text-au" style = "font-size: min(4vh, 19px); margin-top: -20px;">
+                We recognize the importance of informing and inspiring people to make conscious choices that contribute to a healthier planet. Earth in Harmony provides a comprehensive resource center where visitors can learn about sustainable practices, eco-friendly technologies, and the impact of individual actions on the environment.
+              </p>
+            </div>
+
+            <div class="aucardTxt">
+              <h3 class="aucardH2">Let's Save the Earth <span style="color:cyan; white-space: no-line-break;margin-top: -20px;">Together</span>.</h3>
+              <p class="card-text-au" style = "font-size: min(4vh, 19px); margin-top: -20px;">
+                Join us on this exciting journey towards a planet with negative carbon emissions. Together, we can make a difference—one informed choice at a time. Visit our website, explore the wealth of information, and become a catalyst for positive change. Earth in Harmony is not just a mission; it's a movement towards a greener, healthier, and more harmonious world.
+              </p>
+            </div>
+
+          </div>
+        </div>
+        
 
         <div style="color: white;">
 
-          <div class="abc" style="border-radius: 50px;">
+          <div class="abc portrait" style="border-radius: 50px;">
             <div class="aucardTxt">
               <h3 class="aucardH2">Welcome To Our Mission: <span style="color:rgb(10, 161, 65); white-space: no-line-break;">Earth</span> in Harmony.</h3>
               <p class="card-text-au">
@@ -64,7 +113,8 @@
             </div>
           </div>
 
-          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+          <div class="abc portrait" style="border-radius: 50px;">            
+            <div class="aucardTxt">
               <h3 class="aucardH2">You Can Lead a Horse to <span style="color:rgb(0, 166, 255); white-space: no-line-break;">Water</span>, But You Can't Make It Drink.</h3>
               <p class="card-text-au">
                 We recognize the importance of informing and inspiring people to make conscious choices that contribute to a healthier planet. Earth in Harmony provides a comprehensive resource center where visitors can learn about sustainable practices, eco-friendly technologies, and the impact of individual actions on the environment.
@@ -72,15 +122,7 @@
             </div>
           </div>
 
-          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
-              <h3 class="aucardH2"> Ease of Comfort for <span style="color:rgb(35, 217, 126); white-space: no-line-break;">You</span>.</h3>
-              <p class="card-text-au">
-                Our website is designed to be user-friendly and engaging, providing easily digestible information on topics ranging from energy conservation and waste reduction to sustainable transportation and ethical consumerism. We believe that knowledge is a powerful catalyst for change, and by making information accessible, we hope to inspire a ripple effect of positive actions.    
-              </p>
-            </div>
-          </div>
-
-          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+          <div class="abc portrait" style="border-radius: 50px;">            <div class="aucardTxt">
               <h3 class="aucardH2">It's the Small <span style="color:rgb(35, 181, 217); white-space: no-line-break;">Steps</span>.</h3>
               <p class="card-text-au">
                 One of the key features of our mission is the emphasis on practical steps that individuals can take in their daily lives. From tips on reducing energy consumption at home to guidance on making sustainable choices when shopping, Earth in Harmony aims to bridge the gap between awareness and action. We understand that each person's journey towards a greener lifestyle is unique, and our platform accommodates a variety of entry points for individuals at different stages of their eco-conscious journey.
@@ -88,15 +130,8 @@
             </div>
           </div>
 
-          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
-              <h3 class="aucardH2">Share Your <span style="color:rgb(49, 205, 18); white-space: no-line-break;">Experiences</span>.</h3>
-              <p class="card-text-au">
-                Our community-driven approach encourages users to share their success stories, challenges, and innovative solutions. By fostering a sense of collective responsibility, Earth in Harmony aims to create a network of like-minded individuals working together to achieve the ambitious goal of negative carbon emissions. Through collaboration and shared knowledge, we believe we can turn the tide and build a sustainable future for generations to come.
-              </p>
-            </div>
-          </div>
-
-          <div class="abc" style="border-radius: 50px;">            <div class="aucardTxt">
+          <div class="abc portrait" style="border-radius: 50px;">            
+            <div class="aucardTxt">
               <h3 class="aucardH2">Let's Save the Earth <span style="color:cyan; white-space: no-line-break;">Together</span>.</h3>
               <p class="card-text-au">
                 Join us on this exciting journey towards a planet with negative carbon emissions. Together, we can make a difference—one informed choice at a time. Visit our website, explore the wealth of information, and become a catalyst for positive change. Earth in Harmony is not just a mission; it's a movement towards a greener, healthier, and more harmonious world.

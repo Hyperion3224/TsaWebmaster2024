@@ -85,7 +85,6 @@ footer a, footer a:visited, footer a:hover, footer a:active {
   color: white;
 }
 
-
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-250px * 7))}
@@ -721,37 +720,6 @@ div.infoCardTxt p {
 
 /* ABOUT US */
 
-
-.our-mission {
- color:#d3d3d3;
-}
-
-
-
-
-.abc {
-  min-width: 900px;
-  margin: 50px;
-  border: 1px solid #000000;
-  background-color: #181A1E;
-  border-radius: 10px;
-  padding:10px;
-  opacity:0;
-
-
-
-
-}
-.about-us-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(6, 15%);
-  gap: 15px;
-}
-
-
-
-
  div.show {
    
     transition: transform 400ms ease-in-out;
@@ -1317,4 +1285,53 @@ strong {
   word-wrap: break-word;
   hyphens: auto;
   max-width: 97%;
+}
+
+.about-us-background {
+  -webkit-mask-image: linear-gradient(black,black,black,transparent, transparent);
+  mask-image: linear-gradient(black,black,black,transparent, transparent);
+  width: 45%;
+  position: absolute;
+}
+
+.about-us-info {
+  background-color: #1112148f;
+  align-items: center;
+  color: white;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.about-us-info h1 em strong{
+  text-align: inherit;
+}
+.about-us-info p{
+  text-align: left;
+}
+
+.vertical-padding {
+  padding-top:10vh;
+  padding-bottom: 10vh;
+}
+.about-us-grid2 {
+  display: grid;
+  grid-template-columns: 10vw auto; 
+  grid-column-gap: 20vw;
+}
+.about-us-grid2 div{
+  margin-right: 5vw;
+}
+.about-us-info em{
+  font-size: 1.5em;
+}
+
+.about-us-info-grid {
+  padding-top: 10vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.about-us-info-grid-element {
+  padding-top:10vh;
+  padding-bottom: 10vh;
 }

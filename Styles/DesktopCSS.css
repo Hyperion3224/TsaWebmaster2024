@@ -1548,3 +1548,11 @@ canvas {
 .threeOverlay h1 em p strong{
   color: white;
 }
+
+.item .content .name, .item .content .des  {
+  text-shadow: 1px 1px 2px #000000ad;
+}
+
+.item .content button {
+  box-shadow: 2px 2px 2px #00000078;
+}

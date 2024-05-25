@@ -1229,6 +1229,21 @@ div.infoCardTxt p {
     display: none;
   }
 
+  .threeSections{
+    width: 86vw; 
+  }
+
+  .threeSections p {
+    font-size: 50px;
+  }
+
+  .threeSections h1 {
+    font-size: 60px; 
+  }
+
+  .threeSections em {
+    font-size: 40px; 
+  }
 }
 
 

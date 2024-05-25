@@ -87,19 +87,19 @@ const geo ={
     id: "geothermal",
     Title: "Geothermal Power",
     Disclaimer: "geothermal plants vary so this might look different than the geothermal plants in your area",
-    i1: "",
+    i1: "../Styles/Sources/GreenEnergySolutions/Geo/bernd-dittrich-PPsvcHEVm1o-unsplash.jpg",
     q1: "What is geothermal power?",
     a1: "Geothermal power is obtained by warming fluids using the earth's heat in order to turn them into steam which is then pushed through a turbine to generate electricity. The steam is then cooled back into a liquid and recycled.",
-    i2: "",
+    i2: "../Styles/Sources/GreenEnergySolutions/Geo/dan-meyers-BkScvzMN9Nw-unsplash.jpg",
     q2: "How does geothermal power work?",
     a2: "Heat from the earth can be used directly for heat, or steam from geothermal energy processes can be used to generate electricity.",
-    i3: "",
+    i3: "../Styles/Sources/GreenEnergySolutions/Geo/jason-mavrommatis-zAITDJYV09w-unsplash.jpg",
     q3: "How much does geothermal power cost to implement?",
     a3: "On average, homeowners can expect geothermal heating and cooling to be around $18k-$30k, although those numbers may be higher when considering higher-end heat pump systems for larger homes.",
-    i4: "",
+    i4: "../Styles/Sources/GreenEnergySolutions/Geo/matt-palmer-UXjYy04EvOc-unsplash.jpg",
     q4: "How much money does geothermal power save in the long run?",
     a4: "In comparison to an existing A/C and Furnace setup, geothermal power may save the user $46,412 after some decades overall as compared to the $5,310 saved by upgraded conventional power.",
-    i5: "",
+    i5: "../Styles/Sources/GreenEnergySolutions/Geo/sam-bark-R1GWSOJ9cng-unsplash.jpg",
     q5: "How do tax benefits regarding geothermal power work?",
     a5: "A 30% tax credit is applied to the cost of purchasing and installing a heat pump system at a home used as a residence by the taxpayer.",
 };
@@ -190,19 +190,19 @@ function change(num) {
     var identification = document.getElementsByClassName("solutions-info");
     var title = document.getElementById("title");
     var disclaimer = document.getElementById("title-disclaimer");
-    //var i1 = document.getElementById('i1');
+    var i1 = document.getElementById('i1');
     var q1 = document.getElementById('q1');
     var a1 = document.getElementById('a1');
-    //var i2 = document.getElementById('i2');
+    var i2 = document.getElementById('i2');
     var q2 = document.getElementById('q2');
     var a2 = document.getElementById('a2');
-    //var i3 = document.getElementById('i3');
+    var i3 = document.getElementById('i3');
     var q3 = document.getElementById('q3');
     var a3 = document.getElementById('a3');
-    //var i4 = document.getElementById('i4');
+    var i4 = document.getElementById('i4');
     var q4 = document.getElementById('q4');
     var a4 = document.getElementById('a4');
-    //var i5 = document.getElementById('i5');
+    var i5 = document.getElementById('i5');
     var q5 = document.getElementById('q5');
     var a5 = document.getElementById('a5');
 
@@ -237,21 +237,29 @@ function change(num) {
       }
     title.innerText = update.Title;
     disclaimer.innerText = update.Disclaimer;
-    //i1.value = update.i1;
     q1.innerText = update.q1;
     a1.innerText = update.a1;
-    //i2.value = update.i2;
     q2.innerText = update.q2;
     a2.innerText = update.a2;
-    //i3.value = update.i3;
     q3.innerText = update.q3;
     a3.innerText = update.a3;
-    //i4.value = update.i4;
     q4.innerText = update.q4;
     a4.innerText = update.a4;
-    //i5.value = update.i5;
     q5.innerText = update.q5;
     a5.innerText = update.a5;
+      try   {
+    i1.src = update.i1;
+    i2.src = update.i2;
+    i3.src = update.i3;
+    i4.src = update.i4;
+    i5.src = update.i5;
+    } catch (e){
+        console.log('images faild to change \n' + e);
+    }
+
+
+    var scroll = document.getElementById(update.id);
+    scroll.scrollTo(0,0);
 
     console.log("change to: " + update.Title)
 }

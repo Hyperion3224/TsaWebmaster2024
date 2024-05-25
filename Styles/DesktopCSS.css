@@ -1340,6 +1340,13 @@ strong {
   font-size: 1.5em;
 }
 
+.about-us-info-grid-element img{
+  width: 3vw;
+  height: auto;
+  border-radius: 3vw;
+  
+}
+
 .about-us-info-grid {
   padding-top: 10vh;
   display: grid;

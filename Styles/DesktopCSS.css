@@ -1312,6 +1312,38 @@ strong {
 
 
 */
+.home-about-us {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 1vw;
+}
+.home-about-us-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1d1f;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  padding: 1vw;
+  position: relative;
+  margin-top: 2vw;
+}
+.home-about-us-card p{
+  margin-top: 2vw;
+  font-family: Poppins;
+}
+.home-about-us-card small{
+  font-family: Poppins;
+  color: dimgray;
+}
+.home-about-us-card img{
+  border-radius: 1.5vw;
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  top: -1.5vw;
+  left: calc(50% - 1.5vw);
+}
 
 .bigger-badder {
   display: grid;
@@ -1319,12 +1351,21 @@ strong {
   font-size: larger;
   color:#fff;
 }
+.bigger-badder p{
+  margin: 1vw;
+}
+
 .bigger-badder-img {
-  background-color: white;
   border-radius: 25px;
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
+}
+.bigger-badder-img img{
+  border-radius: 25px;
+  position: absolute;
+  width: 100%;
+  height: auto;
 }
 .bigger-badder-img button {
   position: absolute; 

@@ -1286,10 +1286,22 @@ strong {
 .about-us-info-grid-element {
   padding-top:10vh;
   padding-bottom: 10vh;
-  transition: transform 400ms ease-in-out;
+
+  /*transition: transform 400ms ease-in-out;
     animation-delay: 1s;
     animation: fade-from-bottom 1.5s;
-    opacity:1;
+    opacity:1;*/
+}
+
+.fade-up-element {
+  opacity: 0; 
+  transform: translateY(100px);
+  transition: opacity .5s ease-in-out, transform .75s ease-in-out;
+}
+
+.fade-up-element.appear {
+  opacity: 1; 
+  transform: translateY(0px);
 }
 
 .about-us-info-grid-element img{

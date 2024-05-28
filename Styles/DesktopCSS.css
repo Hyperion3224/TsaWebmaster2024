@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 /* width */
 ::-webkit-scrollbar {
@@ -1674,4 +1674,108 @@ canvas {
 
 .item .content button {
   box-shadow: 2px 2px 2px #00000078;
+}
+
+/*
+
+
+  practices
+
+
+*/
+
+.bkg-img {
+  z-index: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(2vw);
+}
+
+.bkghide{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.bkgvis {
+  opacity: 1;
+}
+
+.practice {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  position:absolute;
+  z-index: 1;
+  min-height: max-content;
+  width: 100%;
+  height: 85%;
+}
+
+.practice-line {
+  display: grid;
+  grid-template-columns: auto 5% 5% 5% 5% 5%;
+  column-gap: 3px;
+  width: 10vw;
+  position: absolute;
+  bottom: 5vh;
+}
+.line {
+  width: 100%;
+  height: 3px;
+  border-bottom: white 3px solid;
+}
+
+.practice-left {
+  align-content: center;
+}
+.practice-left h1{
+  
+}
+.practice-left p{
+  
+}
+.practice-left small{
+  
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.practice-card {
+  display: flex;
+  flex-direction: column;
+  color:white;
+}
+
+.practice-card button{
+  height: fit-content;
+  width: fit-content;
+  background-color: transparent;
+  border:none;
+  color: white;
+}
+.practice-buttons {
+  display: flex; 
+  flex-direction: row; 
+  position: absolute;
+  right: 60%; 
+  top: 50%;
+}
+
+.practice-card img{
+  height: 1.5vw;
+  width: 1.5vw;
+
+}
+
+.practice-right {
+  
 }

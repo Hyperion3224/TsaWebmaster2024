@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 @media (orientation: portrait) {
+  .about-us-info-grid-element {
+    padding-top:1vh;
+    padding-bottom: 1vh;
+  }
   .about-us-grid2 {
     display: grid;
     grid-template-columns: 10vw auto; 
@@ -183,7 +187,7 @@
   }
 
   .about-us-text {
-    font-size: 40px;
+    font-size: 16pt;
   }
 
   em.about-us-text {
@@ -229,6 +233,10 @@
 }
 
 @media (orientation: landscape) {
+  .about-us-info-grid-element {
+    padding-top:10vh;
+    padding-bottom: 10vh;
+  }
   .about-us-grid2 {
     display: grid;
     grid-template-columns: 10vw auto; 
@@ -1364,16 +1372,6 @@ strong {
   font-size: 1.5em;
 }
 
-
-.about-us-info-grid-element {
-  padding-top:10vh;
-  padding-bottom: 10vh;
-
-  /*transition: transform 400ms ease-in-out;
-    animation-delay: 1s;
-    animation: fade-from-bottom 1.5s;
-    opacity:1;*/
-}
 
 .fade-up-element {
   opacity: 0; 

@@ -1165,7 +1165,7 @@ div.infoCardTxt p {
 
 
 .sidebar {
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(0, 0, 0, .8);
   position: fixed;
   top: 0;
   width: 100vw; 
@@ -1186,6 +1186,7 @@ div.infoCardTxt p {
 
 .tabs a{
   font-size: 79px;
+  color: white;
 }
 
 .tab {
@@ -1196,7 +1197,7 @@ div.infoCardTxt p {
 }
 
 .current-tab {
-  background-color: white;
+  background-color: rgba(139, 241, 194, 0.527);
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */

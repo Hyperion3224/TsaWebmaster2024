@@ -187,11 +187,11 @@
   }
 
   .about-us-text {
-    font-size: 16pt;
+    font-size: 4vw;
   }
 
   em.about-us-text {
-    font-size: 50px; 
+    font-size: 6vw; 
   }
 
   #about-us-heading {
@@ -293,6 +293,7 @@
     position: absolute;
     right: 60%; 
     top: 50%;
+    z-index: 20;
   }
   
   .practice-card img{
@@ -438,7 +439,7 @@ footer {
   position: relative;
   z-index: 1;
   bottom: 0;
-  height: 20%;
+  height: 30%;
   background-color: #151518;
 }
  
@@ -1736,5 +1737,9 @@ canvas {
 }
 
 .practice-right {
-  
+  font-family: Poppins, sans-serif;
+  color: white;
+  text-shadow: 1px 1px 4px #000000b2;
+  z-index: 15;
 }
+
